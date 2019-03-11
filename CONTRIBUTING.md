@@ -1,7 +1,7 @@
 # Cum sa contribui
 
 Pentru a contribui va trebui sa faceti in primul rand un *fork* al depozitului de cod.
-Pentru acest lucru va trebui sa accesati cu ajutorul unui browser web [pagina depozitului de cod](proiect-tw) si sa apasati pe butonul **Fork** situat in partea dreapta sus a paginii.
+Pentru acest lucru va trebui sa accesati cu ajutorul unui browser web [pagina depozitului de cod](https://github.com/bogdan9898/proiect-tw) si sa apasati pe butonul **Fork** situat in partea dreapta sus a paginii.
 
 ## Elaborarea solutiei
 
@@ -89,7 +89,7 @@ Pentru a urca aceste modificari in cadrul depozitului de cod de pe Github puteti
 ~ $ git push origin loginGUI
 ```
 
-Dupa ce ati trimis modificarile propuse catre fork-ul vostru, va trebui sa deschideti un *Pull request* catre [depozitul de cod sursa](proiect-tw).
+Dupa ce ati trimis modificarile propuse catre fork-ul vostru, va trebui sa deschideti un *Pull request* catre [depozitul de cod sursa](https://github.com/bogdan9898/proiect-tw).
 
 Pentru a face acest lucru va trebui sa accesati pagina destinata branch-urilor din cadrul depozitului vostru de cod.
 Pentru Tuxy Pinguinescu aceasta pagina este `https://github.com/tuxy_pinguinescu/proiect-tw/branches`.
