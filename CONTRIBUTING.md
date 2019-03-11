@@ -3,7 +3,7 @@
 Pentru a contribui va trebui sa faceti in primul rand un *fork* al depozitului de cod.
 Pentru acest lucru va trebui sa accesati cu ajutorul unui browser web [pagina depozitului de cod][proiect-tw] si sa apasati pe butonul **Fork** situat in partea dreapta sus a paginii.
 
-## Propunerea unei solutiei
+## Elaborarea solutiei
 
 Mai jos puteti gasi o secventa de pasi pentru a propune o solutie.
 
