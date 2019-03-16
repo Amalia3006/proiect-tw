@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TeaSK</title>
+	<link rel="stylesheet" href="./pageSignIn.css">
+</head>
+<body>
+
+<div class="header-wrapper">
+	<div class="center">
+		<header>
+			<div class="header-left">
+				<a href="./firstPage.html" class="logo">TeaSK</a>
+			</div>
+			<div class="header-right">
+				<ul class="main-nav">
+                    <li class="active"><a href="#"><span>Home</span></a></li>
+                    
+                    <div class="dropdown">
+                        <li><a href="#"><span>Authenticate</span></a>
+                            <div class="dropdown-content">
+                                <a href="#">Sign in</a>
+                                <a href="./pageSignUp.html">Sign up</a>
+                            </div>
+                        </li>
+                    </div>
+                   <div class="dropdown">
+                        <li><a href="#"><span>opportunities</span></a>
+                            <div class="dropdown-content">
+                                    <a href="#">Internships</a>
+                                    <a href="#">Trainings</a>
+                                    <a href="#">Conferences</a>
+                            </div>
+                        </li>
+                   </div> 
+                    
+                         <li><a href="#"><span>Jobs</span></a></li>
+					<li><a href="#"><span>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <form action="">
+                            <input type="text" placeholder="Search.." name="Search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                          </form>
+                          
+                    </span></a></li>
+				</ul>
+			</div>
+		</header>
+    </div>
+</div>
+
+<div class="scrollbar">
+    <div class="force-overflow"></div>
+</div>
+
+<div class="welcomebox">
+    <h1>Welcome to TeaSK</h1>
+    <p>Let's step on the road of developing your career</p>
+    <div class="box">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required> 
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+            <a href="firstPageLoggedin.html"><button type="submit" class="loginButton" >Sign in</button></a>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me </input>
+            </label>
+          </div>
+        
+          <div class="box">
+            <button type="button" class="signupbtn">Sign Up</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+</div>
+
+</body>
+        
+</html>
