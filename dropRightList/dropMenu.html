@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> titlu </title>
+	<link type="text/css" rel="stylesheet" href="test2.css">
+</head>
+<body>
+	<script type="text/javascript" src="test2.js"></script>
+
+	<div class="searchMenu" onmouseleave="closeSearchMenu()">
+		<div class="vlist1">
+			<li onmouseover="openvlist2(event, 'Conferences')">Conferences</li>
+			<li onmouseover="openvlist2(event, 'Trainings')">Trainings</li>
+			<li onmouseover="openvlist2(event, 'limbaje')">Internships</li>
+		</div>
+
+		<div class="vlist2" id="Conferences">
+			<li>nr10</li>
+		</div>
+
+		<div class="vlist2" id="Trainings">
+			<li>nr20</li>
+			<li>nr21</li>
+		</div>
+
+		<div class="vlist2" id="Internships">
+			<li>nr30</li>
+			<li>nr31</li>
+			<li>nr32</li>
+		</div>
+
+		<div class="vlist2" id="limbaje">
+			<li onmouseover="openvlist3(event, 'firmeC++')">C++</li>
+			<li onmouseover="openvlist3(event, 'firmeJava')">Java</li>
+			<li onmouseover="openvlist3(event, 'firmeJavaScript')">JavaScript</li>
+			<li onmouseover="openvlist3(event, 'firmeC#')">C#</li>
+		</div>
+
+		<div class="vlist3" id="firmeC++">
+			<li>Firma1</li>
+			<li>Firma2</li>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
