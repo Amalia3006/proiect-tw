@@ -7,7 +7,7 @@
 }
 /* toate partile din body vor avea by default urmatoarele particularitati */
 body{
-    background-image: url("graficAlb.png");
+    background-color: white;
     margin: 0;
     font-family: Bookman;
     font-size:14px;
@@ -348,7 +348,7 @@ form:hover .fa{
 }
 
 .footer{
-    background-image: url("grafic2.png");
+    background-color: white;
     color: #000;
     padding:10px;
     text-align: center;

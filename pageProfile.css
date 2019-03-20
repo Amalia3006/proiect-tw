@@ -216,6 +216,7 @@ form:hover .fa{
 }
 
 .container{
+    flex-wrap: wrap;
     border: solid black 1px;
     display: flex;
     position: relative; 
@@ -228,6 +229,7 @@ form:hover .fa{
    
 }
 .contentLeft{
+    flex-wrap: wrap;
     border: solid white 2px;
     width: 20%;
     float:left;
@@ -235,7 +237,7 @@ form:hover .fa{
     color: white;
     font-weight: bold;
     margin-bottom: 20px;
-    background-image: url(space3.png);
+    background-image: url(./resources/background/space3.png);
     background-repeat: no-repeat;
     overflow: auto;
     height: auto;
@@ -260,10 +262,10 @@ form:hover .fa{
 }
 
 .contentRight{
-    
+    flex-wrap: wrap;
     width: 80% !important;
     min-height: 530px;
-    background-image: url(space3.png);
+    background-image: url(./resources/background/space3.png);
     display: grid;
     background-repeat: no-repeat;
     overflow: auto;
@@ -438,15 +440,16 @@ form:hover .fa{
 }
 
 .footer{
-    background-image: url("grafic2.png");
+    background-color:white;
     color: #000;
     padding:10px;
     text-align: center;
 }
 
 @media screen and (max-width: 800px) {
-    .footer, .container, .header-right, .header-wrapper, .sub-header, header, body, .fa, form  {
+    .footer, .container, .header-right, .header-wrapper, .sub-header, header, body  {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      height: auto;
     }
   }
 

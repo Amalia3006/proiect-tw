@@ -7,7 +7,7 @@
 /* toate partile din body vor avea by default urmatoarele particularitati */
 
 body {
-    background-image: url("space.png");
+    background-image: url("./resources/background/space.png");
     background-repeat: no-repeat;
     overflow: auto;
     height: auto;

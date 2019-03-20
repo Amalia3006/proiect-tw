@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* toate partile din body vor avea by default urmatoarele particularitati */
+body {
+    background-image: url("./resources/background/space3.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    min-height: 100% !important;
+    background-size: cover;
+    margin: 0;
+    font-family: Bookman;
+    font-size: 14px;
+    color: #001620;
+}
+
+/* seteaza un max width si o incadrare de 100% pt partea de sus cu meniul si sigla */
+.center {
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* marginile in care sta meniul si sigla, gen dunga aia de dedesupt */
+.header-wrapper {
+    background-color: white;
+    padding: 30px 0;
+    border-bottom: 2px solid #001620;
+}
+.logo{
+    height: 70px;
+    width: 150px;   
+}
+/* referitoare la logo TeaSK din stanga sus.. aici se va inlocui cu logo-ul din Illustator*/
+.header-left .logo {
+    font: italic bold 30px Bookman;
+    text-shadow: -2px 1px 0 #FBEADD, -10px 5px 0 hsla(0, 39%, 81%, 0.363);
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #001620;
+}
+
+/* setam cum vor fi afisate logoul, si butoanele din menu, alea de sus */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*setam unde si cum vor sta butoanele de search: articolele sunt impachetate spre sfarsitul liniei (flex-end) */
+.header-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/*aici avem clasa care cuprinde toate butoanele de menu, un fel de by default pt toate*/
+.main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*fiecare buton ii intre tagurile li, pt toate setez initial margin right, ca sa apara departarea aia de dupa buton, inainte de urmatorul*/
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+/* pt ultimul buton din lista, nu voi mai pune acea margine drapta pt ca el nu mai are de cine sa stea departat */
+
+.main-nav li:last-of-type {
+    margin-right: 0;
+}
+
+/*aici setam detaliile pt ceea ce se afla in buton, gen culoarea textului, marimea fontului si stilul, alinierea etc */
+
+.main-nav li a {
+    display: block;
+    color: #001620;
+    text-transform: uppercase;
+    padding: 13px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    /*cat de repede se schimba culoarea textului cand ne pozitionam pe el*/
+}
+
+/*setari pt atunci cand suntem pe pagina corespunzatoare butonului, gen deja am dat click*/
+
+.main-nav li.active a {
+    background: #040f14;
+    color: #FBEADD;
+    border-radius: 5px;
+}
+
+/*setari pt atunci cand ne ducem cu mouse-ul peste buton*/
+
+.main-nav li a:hover {
+    background: rgba(29, 38, 43, 0.308);
+    color: #08141a;
+    border-radius: 5px;
+}
+
+/* butonul de serch e ultimul, pt el nu o sa mai avem hover backgroung si altele*/
+
+.main-nav li:last-of-type a:hover {
+    background: none;
+}
+
+/* pt ultimul buton (search) nu vom mai avea nici setare pt atunci cand e activ*/
+
+.main-nav li:last-of-type.active a {
+    background: none;
+}
+
+/* butonul de search, gen cerculetul initial*/
+
+form[name="lupa"] {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.25s;
+    width: 40px;
+    height: 40px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 2px solid #040f14;
+    padding: 5px;
+}
+
+/* ne referim aici la setari pt acel Serch din interiorul casutei de search, si mai apoi la texul pe care noi il vom introduce*/
+
+input[name="Search"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 25px;
+    padding: 0 25px;
+}
+
+/* detalii pt lupa aia mica din interiorul cerculetului */
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.25s;
+}
+
+/* cand mergem pe butonul de search cu mouseul se extinde la 200px */
+
+form[name="lupa"]:hover {
+    width: 200px;
+    cursor: pointer;
+    /* gen cum arata mouse-ul cand esti pe linia searchului, e manuta aia de pointeaza */
+}
+
+form[name="lupa"]:hover input {
+    display: block;
+}
+
+/* in momentul in care extindem cerculetul de search se schimba culoarea cercului si a lupei din interior, gen cand sunem cu mouseul pe el */
+
+form[name="lupa"]:hover .fa {
+    background: #040f14;
+    color: white;
+}
+
+/* pozitia si cum va fi afisat meniul acela dropdown cand ne ducem cu mouse ul pe butoanele care il au gen recommendations*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* continutul meniului dropdown (care va fi ascuns by default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(241, 241, 241, 0.767);
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.534);
+    z-index: 1;
+}
+
+
+/* link-urile din meniul dropdown, cum arata, culoare etc */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* culoare pt link urile din dropdown menu, cand treci cu mouse pe ele*/
+.dropdownforinterest label{
+    /* margin-top:3%; */
+    /* display:auto; */
+    position: relative;
+}
+.dropdown-content a:hover {
+    background-color: rgb(36, 14, 14);
+}
+
+/* modul in care apare meniul extins, block */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* culoarea butonului initial care se schimba atunci cand suntem pe el si se afiseaza meniiul dropdown */
+
+.dropdown:hover {
+    background: rgba(4, 15, 20, 0.637);
+    color: rgb(5, 5, 5);
+    border-radius: 5px;
+}
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+/* mie, Amalia Damoc-Simon nu imi merge chestiuta asta*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+
+/*padding-ul si border-ul vor fi incluse in width si height */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+ /*suportul pe care sta formularul, chenarul lui adica*/
+form[name="formular"]{
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: rgba(244, 247, 248, 0.39);
+}
+
+/* titlul formularului*/ 
+h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+/* setarile pt casutele de introducere a informatiilor, inclusiv pt testul ce este introdus */
+  input[name="user_name"],
+  input[name="user_email"],
+  input[name="user_password"],
+  input[name="user_number"],
+  input[name="user_tel"],
+  input[name="user_url"],
+  input[name="user_occupation"],
+  input[name="user_company"],
+  input[name="user_country"],
+  input[name="user_city"],
+  textarea,
+  select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #2b2e31;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+/*bulinutele de selectare optiune (de la Gender)*/
+  input[type="radio"]{
+      margin: 0px 10px 15px 0px;  
+  }
+
+  input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+/*caseta meniului de unde se alege job role*/
+  select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+  /*butonul de sign up de la finalul formularului */
+  .submit{
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #000000;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .submit:hover{
+    background-color: rgba(0, 0, 0, 0.74)
+  }
+/*spatierea dintre partile formularului*/
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+  /*spatiu de dupa si font size pt subtitlurile partilor din formular*/
+  legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+ /*titlul fiecarui camp de completare*/ 
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+/*detalii pt textul fiecarei casute optiune la Interests*/
+  label.light {
+    font-weight: 300;
+    display: inline;
+  }
+/*detalii pt textul fiecarei casute optiune la languages*/
+  label.light2 {
+    font-weight: 300;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+  }
+/*bulina cu numarul partii din formular*/
+  .number {
+    background-color: #000000;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+
+  .footer{
+      background-color: white;
+      color:black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      padding: 10px;
+  }
+  
+  @media screen and (min-width: 480px) {
+  
+    form[name="formular"] {
+      max-width: 480px;
+    }
+  
+  }
