@@ -24,26 +24,25 @@ body{
    padding: 30px 0;
     border-bottom: 2px solid #001620;
 }
-
-/* referitoare la logo TeaSK din stanga sus.. aici se va inlocui cu logo-ul din Illustator*/
-.header-left .logo {
-    font: italic bold 30px Bookman;
-    text-shadow: -2px 1px 0 #FBEADD, -10px 5px 0 hsla(0, 39%, 81%, 0.363);
-    font-weight: bold;
-    letter-spacing: 3px;
-    color: #001620;
+/* referitoare la logo TeaSK din stanga sus*/
+.logo{
+    height: 70px;
+    width: 150px;   
 }
+
 /* setam cum vor fi afisate logoul, si butoanele din menu, alea de sus */
 header{
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 /*setam unde si cum vor sta butoanele de search: articolele sunt impachetate spre sfarsitul liniei (flex-end) */
 .header-right{
     flex-grow: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 /*aici avem clasa care cuprinde toate butoanele de menu, un fel de by default pt toate*/
 .main-nav {
@@ -52,6 +51,7 @@ header{
     padding: 0;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 /*fiecare buton ii intre tagurile li, pt toate setez initial margin right, ca sa apara departarea aia de dupa buton, inainte de urmatorul*/
 .main-nav li {
@@ -208,7 +208,11 @@ form:hover .fa{
 }
 /*fundal si restul pt continut */
 .content{
-    background-color:rgba(165, 165, 165, 0.37);
+    background-image: url("./resources/background/space.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    background-size: cover;
     min-height: 530px;
     width:100%;
     display: block;
@@ -232,8 +236,93 @@ form:hover .fa{
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    text-align: center;
+    margin-top:100px;
+    color:white;
+    font-size: 40px;
+}
+.content .success {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top:30px;
+    color:white;
+    font-size: 70px;
+}
+.content .intro {
+    margin-bottom: 40px;
+}
+
+
+/*fundal si restul pt continut 2 */
+.content2{
+    background-color:white;
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    background-size: cover;
+    min-height: 530px;
+    width:100%;
+    display: block;
+    position: relative;
+}
+/* formatare header continut pagina, partea aia cu titlul continutului ce urmeaza */
+.content2 > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 196, 196, 0.5);
+    text-align: center;
+    color: #000;
+    padding: 5px;
+    margin-top: 2px;
+    font-weight: bold;
+   border-top-left-radius: 30px; 
+   border-top-right-radius: 30px; 
+   text-transform: uppercase; 
+} 
+/*text gen paragraf, mica descriere ceva dupa titlu daca vrem sa punem*/
+.content2 > p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 
 }
+
+/*fundal si restul pt continut 3 */
+.content3{
+    background-color:#343246;
+    background-image: url("./resources/background/space3.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    background-size: cover;
+    min-height: 530px;
+    width:100%;
+    display: block;
+    position: relative;
+}
+/* formatare header continut pagina, partea aia cu titlul continutului ce urmeaza */
+.content3 > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 196, 196, 0.5);
+    text-align: center;
+    color: white;
+    padding: 5px;
+    margin-top: 2px;
+    font-weight: bold;
+   border-top-left-radius: 30px; 
+   border-top-right-radius: 30px; 
+   text-transform: uppercase; 
+} 
+/*text gen paragraf, mica descriere ceva dupa titlu daca vrem sa punem*/
+.content3 > p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+
 /* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
 ::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -264,4 +353,9 @@ form:hover .fa{
     text-align: center;
 }
 
+@media screen and (max-width: 800px) {
+    .footer, .container, .header-right, .header-wrapper, .sub-header, header, body  {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
 
