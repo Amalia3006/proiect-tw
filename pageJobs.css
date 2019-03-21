@@ -1,5 +1,4 @@
-/* setam ceva by default pt tot continutul paginii */ 
-*{
+/* setam ceva by default pt tot continutul paginii */ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -236,8 +235,6 @@ input[name="Search"]{
 	border: 2px solid #555555;
 }
 
-
-
 .searchArea{
     background-color: rgba(189, 184, 184, 0.514);
     padding: 2%;
@@ -405,7 +402,7 @@ img[name="firma"]{
     cursor: pointer;
     flex-wrap: wrap;
 }
- 
+
 .footer{
     background-color: white;
     color: #000;
