@@ -236,8 +236,6 @@ input[name="Search"]{
 	border: 2px solid #555555;
 }
 
-
-
 .searchArea{
     background-color: rgba(189, 184, 184, 0.514);
     padding: 2%;
@@ -431,8 +429,6 @@ img[name="firma"]{
     grid-column: 3;
     grid-row: 2;
 } 
-
-
 
 
 .footer{
