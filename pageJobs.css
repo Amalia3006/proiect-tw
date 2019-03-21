@@ -1,0 +1,432 @@
+/* setam ceva by default pt tot continutul paginii */ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/* toate partile din body vor avea by default urmatoarele particularitati */
+body{
+    background-color: white;
+    margin: 0;
+    font-family: Bookman;
+    font-size:14px;
+    color: #001620;
+    width:100%;
+}
+/* seteaza un max width si o incadrare de 100% pt partea de sus cu meniul si sigla */
+.center{
+    /* max-width: 1180px; */
+    margin: 0 auto;
+    width: 100%;
+}
+/* marginile in care sta meniul si sigla, gen dunga aia de dedesupt */
+.header-wrapper{
+   padding: 30px 0;
+    border-bottom: 2px solid #001620;   
+}
+.logo{
+    height: 70px;
+    margin-left:3%;
+}
+/* referitoare la logo TeaSK din stanga sus.. aici se va inlocui cu logo-ul din Illustator*/
+.header-left .logo {
+    font: italic bold 30px Bookman;
+    text-shadow: -2px 1px 0 #FBEADD, -10px 5px 0 hsla(0, 39%, 81%, 0.363);
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #001620;
+}
+
+/* setam cum vor fi afisate logoul, si butoanele din menu, alea de sus */
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/*setam unde si cum vor sta butoanele de search: articolele sunt impachetate spre sfarsitul liniei (flex-end) */
+.header-right{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/*aici avem clasa care cuprinde toate butoanele de menu, un fel de by default pt toate*/
+.main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/*fiecare buton ii intre tagurile li, pt toate setez initial margin right, ca sa apara departarea aia de dupa buton, inainte de urmatorul*/
+.main-nav li {
+    margin-right: 20px;
+}
+/* pt ultimul buton din lista, nu voi mai pune acea margine drapta pt ca el nu mai are de cine sa stea departat */
+.main-nav li:last-of-type{
+    margin-right: 0;
+}
+/*aici setam detaliile pt ceea ce se afla in buton, gen culoarea textului, marimea fontului si stilul, alinierea etc */
+.main-nav li a{
+    display: block;
+    color: #001620;
+    text-transform: uppercase;
+    padding : 13px;
+    font-size: 13px;
+    font-weight: bold; 
+    border-radius: 5px;
+    transition: background-color 0.25s ease, color 0.25s ease; /*cat de repede se schimba culoarea textului cand ne pozitionam pe el*/
+}
+/*setari pt atunci cand suntem pe pagina corespunzatoare butonului, gen deja am dat click*/
+ .main-nav li.active a {
+    background: #040f14;
+    color: #FBEADD;
+    border-radius: 5px;
+}
+/*setari pt atunci cand ne ducem cu mouse-ul peste buton*/
+.main-nav li a:hover {
+    background: rgba(29, 38, 43, 0.308);
+    color: #08141a;
+    border-radius: 5px;
+}
+/* butonul de serch e ultimul, pt el nu o sa mai avem hover backgroung si altele*/
+ .main-nav li:last-of-type a:hover{
+    background: none;
+}
+/* pt ultimul buton (search) nu vom mai avea nici setare pt atunci cand e activ*/
+.main-nav li:last-of-type.active a{
+    background: none;
+}  
+/* butonul de search, gen cerculetul initial*/
+.searchform {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.25s;
+    width: 40px;
+    height: 40px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 2px solid #040f14;
+    padding: 5px;
+}
+/* ne referim aici la setari pt acel Serch din interiorul casutei de search, si mai apoi la texul pe care noi il vom introduce*/
+input[name="Search"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 25px;
+    padding: 0 25px;
+}
+/* detalii pt lupa aia mica din interiorul cerculetului */
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.25s;
+}
+/* cand mergem pe butonul de search cu mouseul se extinde la 200px */
+.searchform:hover{
+    width: 200px;
+    cursor: pointer; /* gen cum arata mouse-ul cand esti pe linia searchului, e manuta aia de pointeaza */
+}
+.searchform:hover input{
+    display: block;
+}
+/* in momentul in care extindem cerculetul de search se schimba culoarea cercului si a lupei din interior, gen cand sunem cu mouseul pe el */
+.searchform:hover .fa{
+    background: #040f14;
+    color: white;
+}
+/* pozitia si cum va fi afisat meniul acela dropdown cand ne ducem cu mouse ul pe butoanele care il au gen recommendations*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+/* continutul meniului dropdown (care va fi ascuns by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(241, 241, 241, 0.767);
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.534);
+    z-index: 1;
+  }
+  
+/* link-urile din meniul dropdown, cum arata, culoare etc */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+/* culoare pt link urile din dropdown menu, cand treci cu mouse pe ele*/
+  .dropdown-content a:hover {background-color: rgb(36, 14, 14);}
+
+/* modul in care apare meniul extins, block */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* culoarea butonului initial care se schimba atunci cand suntem pe el si se afiseaza meniiul dropdown */
+.dropdown:hover  { background: rgba(4, 15, 20, 0.637);
+    color:rgb(5, 5, 5);
+    border-radius: 5px;}
+/* formatare text de sub bara de meniu*/
+.sub-header{
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width:100%;
+   
+}
+/* box-ul care cuprinde content-ul*/
+.container1 {
+    border: solid black 1px;
+    display: block;
+    width:100%;
+    background-image: url("./resources/background/space3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    min-height: 530px;
+ 
+}
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+
+
+.searchArea{
+    background-color: rgba(189, 184, 184, 0.514);
+    padding: 2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    flex-wrap: wrap;
+}
+
+.searchArea > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 150%;
+    margin-bottom: 5%;
+    flex-wrap: wrap;
+}
+
+.searchArea .jobform input[name="searchjob"] {
+
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    background: rgba(255, 255, 255, 0.363);
+    padding: 1% 2% 1% 2%;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 80%;
+    margin-top:1%;
+    margin-bottom: 2%;
+    margin-left:10%;
+    margin-right: 15%;
+    color: black;
+    flex-wrap: wrap;
+  }
+.submit{
+    padding: 1% 2% 1% 2%;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #000000;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    border: 1px solid #000000;
+    margin-top:1%;
+    margin-bottom: 2%;
+    margin-left:10%;
+    margin-right: 15%;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.submit:hover{
+    background-color: rgba(0, 0, 0, 0.74)
+}
+
+label {
+    display: block;
+    margin-bottom: 1%;
+    font-weight: bold;
+    margin: 1%;
+    margin-left:0%;
+    flex-wrap: wrap;
+  }
+label[name="titlu"]{
+      font-size: 120%;
+      background: #9b909079;
+      flex-wrap: wrap;
+  }
+
+.jobdetail {
+    display: inline;
+    margin-right: 1%;
+    margin-left:0%;
+    font-size: 90%;
+    flex-wrap: wrap;
+  }
+.jobtag {
+    display: inline-block;
+    font-size: 90%;
+    margin-left:0%;
+    margin-right: 1%;
+    flex-wrap: wrap;
+}
+
+.container2{
+    border: solid black 1px;
+    background:white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    height: auto;
+}
+.container2 > h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 150%;
+    color:white;
+    background: black;
+    font-weight: bold;
+
+}
+.grid-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    min-height: 530px;
+    display: grid;
+
+    grid-row-gap: 5%;
+}
+.grid {
+    border:solid black 1px;
+     margin-left: 5%;
+     margin-right: 5%;
+    margin-top: 5%;
+    height: auto;
+    display:flex;
+}
+.grid-item1 {         
+    grid-column: 1;
+    grid-row: 1;
+    
+ }
+.leftcont{
+    width: 40%;
+    border-right: #000 solid 1px;
+    overflow: auto;
+}
+
+.leftcont h1 {
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+.leftcont .logo {
+    background-image: url("./resources/firme/Bit.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left:10%;
+    margin-right: 10%;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+}
+.rightcont{
+    width: 60%;
+}
+.grid-item2 {      
+    
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.grid-item3 {      
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.grid-item4 {      
+    grid-column: 2;
+    grid-row: 2;
+}
+/* .grid-item5 {      
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.grid-item6 {      
+    grid-column: 2;
+    grid-row: 3;
+} */
+
+
+
+
+.footer{
+    background-color: white;
+    color: #000;
+    padding:10px;
+    text-align: center;
+    flex-wrap: wrap;
+    border: #000 1px solid;
+}
+
+@media screen and (max-width: 800px) {
+    .footer, .container, .header-right, .header-wrapper, .sub-header, header, body  {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
