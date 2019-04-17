@@ -1,0 +1,20 @@
+Pentru a putea rula serverul ai nevoie sa-ti instalezi node.js
+
+Dupa instalare deschide un terminal si navigheaza in folderul cu proiectul sau poti deschide folderul in VSCode si apasand Ctrl+` va aparea terminalul
+
+Pentru a rula proiectul va trebuie mai intai sa instalezi dependetele folosind npm:
+    npm install
+
+Aceasta comanda va crea un folder numit "node_modules". ATENTIE! NU incarca niciodata "node_modules" pe git(el este deja trecut in fisierul ".gitignore" deci va fi ignorat)
+
+Pentru a instala alte pachete decat cele existente deja puteti rula:
+    npmt install <numele_pachetului>
+
+Daca nu sunt erori poti rula serverul:
+    npm run dev
+    SAU
+    npm start
+
+Pentru development e recomandat sa rulezi "npm run dev" deoarece "nodemon"va rula automat scriptul la fiecare modificare a codului sursa, nefiind nevoie oprirea restartarea manuala a serverului
+
+Acum poti sa intri in browser si la adresa: "localhost:3000" vei gasi pagina web

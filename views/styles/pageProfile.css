@@ -1,0 +1,241 @@
+/* formatare text de sub bara de meniu*/
+.sub-header{
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+.container{
+    flex-wrap: wrap;
+    border: solid black 1px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: "bio details details details details"
+    "chart chart chart chart chart"
+    "exp exp . edu edu";
+    position: relative; 
+    width:100%;
+    height: auto;
+    min-height: 100% !important;
+    background-image: url(../resources/background/space3.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+   
+}
+.bio{
+    grid-area: bio;
+    flex-wrap: wrap;
+    border: solid gray 2px;
+    float:left;
+    min-height: 530px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    height: auto;
+    /* min-height: 100% !important; */
+    background-size: cover;
+
+}
+.bio > h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+.user{
+    height: 120px;
+    width: 120px;
+    /* margin-left: 35%;
+    margin-top:10px; */
+    margin: 0 auto;
+    display: block;
+}
+.bio > p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.details{
+    grid-area: details;
+    margin-bottom: 20px;
+    border: solid grey 1px;
+    column-count: 2;
+    align-items: center;
+    column-gap: 10px;
+    padding: 40px;
+    background: rgba(219, 215, 215, 0.479)
+
+}
+.details > h1{
+    background: rgba(212, 206, 206, 0.493);
+    border-bottom: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    column-span: all;
+}
+.details > p{
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.exp{
+    grid-area: exp;
+    float:left;
+    margin-top: 20px;
+    /* margin-left: 30px; */
+    border: solid grey 1px;
+    height: 100%;
+    width: auto;
+    padding: 30px;
+    background: rgba(219, 215, 215, 0.479)
+}
+.exp > h1{
+    background: rgba(212, 206, 206, 0.493);
+    border-bottom: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    column-span: all;
+}
+
+.exp .position {
+    text-align: center;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.exp .period {
+    text-align: center;
+    font-size:15px;
+    margin-bottom: 10px;
+}
+.edu{
+    grid-area: edu;
+    float:right;
+    margin-top: 20px;
+    /* margin-right: 30px; */
+    border: solid grey 1px;
+    height: 100%;
+    width: auto;
+    padding: 30px;
+    background: rgba(219, 215, 215, 0.479)
+}
+
+.edu > h1{
+    background: rgba(212, 206, 206, 0.493);
+    border-bottom: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    column-span: all;
+}
+
+.edu .college {
+    text-align: center;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.chart{
+    padding-left: 10%;
+    /* margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%; */
+    background: rgba(219, 215, 215, 0.479);
+    grid-area: chart;
+}
+
+.chart h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: auto;  
+}
+.chart h2{
+    text-align: left;   
+}
+.line{
+    height: 25px;
+    min-width: 50%;
+    margin: 0 auto 10px;
+    line-height: 25px;
+    font-size: 14px;
+    color:#F5F5F5;
+    padding: 0 0 0 10px;
+    position: relative;
+}
+.line:before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    left:0;
+    height: 25px;
+    top:0;
+    z-index: 0;
+    background: #d2d2d2;
+}
+.line:after{
+    content: '';
+    background: #333;
+    height: 25px;
+    transition: 0.8s;
+    display:block;
+    width: 100%;
+    animation: animate 4s;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+}
+.line1:after{
+    max-width: 50%;
+    content: '50%'
+}
+.line2:after{
+    max-width: 85%;
+    content: '85%';
+}
+.line3:after{
+    max-width: 70%;
+    content: '70%'
+}
+.line4:after{
+    max-width: 20%;
+    content: '20%'
+}
+@keyframes animate{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.footer{
+    background-color:white;
+    color: #000;
+    padding:10px;
+    text-align: center;
+}
