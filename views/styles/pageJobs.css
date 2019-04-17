@@ -1,0 +1,219 @@
+/* formatare text de sub bara de meniu*/
+.sub-header{
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width:100%;
+   
+}
+/* box-ul care cuprinde content-ul*/
+.container1 {
+    border: solid black 1px;
+    display: block;
+    width:100%;
+    background-image: url("../resources/background/space3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    min-height: 530px;
+ 
+}
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+.searchArea{
+    background-color: rgba(189, 184, 184, 0.514);
+    padding: 2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    flex-wrap: wrap;
+}
+
+.searchArea > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 150%;
+    margin-bottom: 5%;
+    flex-wrap: wrap;
+}
+
+.searchArea .jobform input[name="searchjob"] {
+
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    background: rgba(255, 255, 255, 0.363);
+    padding: 1% 2% 1% 2%;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 80%;
+    margin-top:1%;
+    margin-bottom: 2%;
+    margin-left:10%;
+    margin-right: 15%;
+    color: black;
+    flex-wrap: wrap;
+  }
+.submit{
+    padding: 1% 2% 1% 2%;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #000000;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    border: 1px solid #000000;
+    margin-top:1%;
+    margin-bottom: 2%;
+    margin-left:10%;
+    margin-right: 15%;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.submit:hover{
+    background-color: rgba(0, 0, 0, 0.74)
+}
+
+label {
+    display: block;
+    margin-bottom: 1%;
+    font-weight: bold;
+    margin: 1%;
+    margin-left:0%;
+    flex-wrap: wrap;
+  }
+label[name="titlu"]{
+      font-size: 120%;
+      background: #9b909079;
+      flex-wrap: wrap;
+  }
+
+.jobdetail {
+    display: inline;
+    margin-right: 1%;
+    margin-left:0%;
+    font-size: 90%;
+    flex-wrap: wrap;
+  }
+.jobtag {
+    display: inline-block;
+    font-size: 90%;
+    margin-left:0%;
+    margin-right: 1%;
+    flex-wrap: wrap;
+}
+
+.container2{
+    border: solid black 1px;
+    background:white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    height: auto;
+}
+.container2 > h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 150%;
+    color:white;
+    background: black;
+    font-weight: bold;
+
+}
+.grid-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-row-gap: 5%;
+    background-image: url("../resources/background/space3.png");
+    flex-wrap: wrap;
+}
+.grid {
+    border:solid black 1px;
+     margin-left: 5%;
+     margin-right: 5%;
+    margin-top: 5%;
+    background: rgba(0, 22, 32, 0.781);
+    color:white;
+    flex-wrap: wrap;
+}
+img[name="firma"]{
+    height: 30%;
+    width: 60%;
+    align-content: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+.jobtitle{
+    text-align: center;
+    font-size: 150%;
+    margin-bottom: 1%;
+    margin-left:2%;
+    margin-right: 2%;
+    flex-wrap: wrap;
+}
+.jobdescription{
+    text-align: center;
+    font-size: 100%;
+    margin-left:2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.view{
+  
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(41, 36, 36, 0.767);
+    font-size: 18px;
+    text-align: center;
+    width: 50%;
+    border: 1px solid #000000;
+    margin-top:1%;
+    margin-bottom: 0;
+    margin-left:25%;
+    margin-right: 25%;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.footer{
+    background-color: white;
+    color: #000;
+    padding:10px;
+    text-align: center;
+    flex-wrap: wrap;
+    border: #000 1px solid;
+}

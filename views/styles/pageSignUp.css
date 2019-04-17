@@ -1,0 +1,173 @@
+.content {
+    background-image: url("../resources/background/space3.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    min-height: 100%;
+    background-size: cover;
+    margin: 0;
+    font-family: Bookman;
+    font-size: 14px;
+    color: #001620;
+}
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+/* mie, Amalia Damoc-Simon nu imi merge chestiuta asta*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+
+/*padding-ul si border-ul vor fi incluse in width si height */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+ /*suportul pe care sta formularul, chenarul lui adica*/
+form[name="formular"]{
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: rgba(244, 247, 248, 0.39);
+    min-width: 400px;
+}
+
+/* titlul formularului*/ 
+h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+/* setarile pt casutele de introducere a informatiilor, inclusiv pt testul ce este introdus */
+  input[name="user_name"],
+  input[name="user_email"],
+  input[name="user_password"],
+  input[name="user_number"],
+  input[name="user_tel"],
+  input[name="user_url"],
+  input[name="user_occupation"],
+  input[name="user_company"],
+  input[name="user_country"],
+  input[name="user_city"],
+  textarea,
+  select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #2b2e31;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+/*bulinutele de selectare optiune (de la Gender)*/
+  input[type="radio"]{
+      margin: 0px 10px 15px 0px;  
+  }
+
+  input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+/*caseta meniului de unde se alege job role*/
+  select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+  /*butonul de sign up de la finalul formularului */
+  .submit{
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #000000;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .submit:hover{
+    background-color: rgba(0, 0, 0, 0.74)
+  }
+/*spatierea dintre partile formularului*/
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+  /*spatiu de dupa si font size pt subtitlurile partilor din formular*/
+  legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+ /*titlul fiecarui camp de completare*/ 
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+/*detalii pt textul fiecarei casute optiune la Interests*/
+  label.light {
+    font-weight: 300;
+    display: inline;
+  }
+/*detalii pt textul fiecarei casute optiune la languages*/
+  label.light2 {
+    font-weight: 300;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+  }
+/*bulina cu numarul partii din formular*/
+  .number {
+    background-color: #000000;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+
+  .footer{
+      background-color: white;
+      color:black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      padding: 10px;
+  }
+  
+  @media screen and (min-width: 480px) {
+  
+    form[name="formular"] {
+      max-width: 480px;
+    }
+  
+  }

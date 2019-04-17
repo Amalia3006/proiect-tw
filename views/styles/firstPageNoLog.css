@@ -1,0 +1,279 @@
+/* formatare text de sub bara de meniu*/
+.sub-header{
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+/* box-ul care cuprinde content-ul*/
+.container {
+    border: solid black 1px;
+    display: block;
+    position: relative;
+    width:auto;
+
+}
+/*fundal si restul pt continut */
+.content{
+    background-image: url("../resources/background/space2.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    background-size: cover;
+    min-height: 530px;
+    width:100%;
+    display: block;
+    position: relative;
+}
+/* formatare header continut pagina, partea aia cu titlul continutului ce urmeaza */
+.content > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 196, 196, 0.5);
+    text-align: center;
+    color: #000;
+    padding: 5px;
+    margin-top: 2px;
+    font-weight: bold;
+   border-top-left-radius: 30px; 
+   border-top-right-radius: 30px; 
+   text-transform: uppercase; 
+} 
+/*text gen paragraf, mica descriere ceva dupa titlu daca vrem sa punem*/
+.content > p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top:100px;
+    color:white;
+    font-size: 40px;
+}
+.content .success {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top:30px;
+    color:white;
+    font-size: 70px;
+}
+.content .intro {
+    margin-bottom: 40px;
+}
+
+
+/*fundal si restul pt continut 2 */
+.content2{
+    background-color:#343246;
+    background-image: url("../resources/background/space2.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    background-size: cover;
+    min-height: 530px;
+    width:100%;
+    display: block;
+    position: relative;
+}
+/* formatare header continut pagina, partea aia cu titlul continutului ce urmeaza */
+.content2 > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 196, 196, 0.5);
+    text-align: center;
+    color: #000;
+    padding: 5px;
+    margin-top: 2px;
+    font-weight: bold;
+   border-top-left-radius: 30px; 
+   border-top-right-radius: 30px; 
+   text-transform: uppercase; 
+} 
+/*text gen paragraf, mica descriere ceva dupa titlu daca vrem sa punem*/
+.content2 > p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+/*fundal si restul pt continut 3 */
+.content3{
+    background-color:#343246;
+    background-image: url("../resources/background/space2.png");
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: auto;
+    background-size: cover;
+    min-height: 530px;
+    width:100%;
+    display: block;
+    position: relative;
+}
+/* formatare header continut pagina, partea aia cu titlul continutului ce urmeaza */
+.content3 > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 196, 196, 0.5);
+    text-align: center;
+    color: white;
+    padding: 5px;
+    margin-top: 2px;
+    font-weight: bold;
+   border-top-left-radius: 30px; 
+   border-top-right-radius: 30px; 
+   text-transform: uppercase; 
+} 
+/*text gen paragraf, mica descriere ceva dupa titlu daca vrem sa punem*/
+.content3 > p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+
+.grid-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    display: grid;
+    grid-row-gap: 5%;
+    background-image: url("../resources/background/space2.png");
+    flex-wrap: wrap;
+}
+.grid {
+    border:solid black 1px;
+     margin-left: 5%;
+     margin-right: 5%;
+    margin-top: 5%;
+    background: rgba(0, 22, 32, 0.781);
+    color:white;
+    flex-wrap: wrap;
+}
+img[name="firma"]{
+    height: 30%;
+    width: 60%;
+    align-content: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+.jobtitle{
+    text-align: center;
+    font-size: 150%;
+    margin-bottom: 1%;
+    margin-left:2%;
+    margin-right: 2%;
+    flex-wrap: wrap;
+}
+.jobdescription{
+    text-align: center;
+    font-size: 100%;
+    margin-left:2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.eventtitle{
+    text-align: center;
+    font-size: 150%;
+    margin-bottom: 1%;
+    margin-left:2%;
+    margin-right: 2%;
+    flex-wrap: wrap;
+}
+.eventdescription{
+    text-align: center;
+    font-size: 100%;
+    margin-left:2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.view{
+  
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(41, 36, 36, 0.767);
+    font-size: 18px;
+    text-align: center;
+    width: 50%;
+    border: 1px solid #000000;
+    margin-top:1%;
+    margin-bottom: 0;
+    margin-left:25%;
+    margin-right: 25%;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.grid-item1 {         
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid-item2 {      
+    
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.grid-item3 {      
+    grid-column: 3;
+    grid-row: 1;
+}
+
+
+.grid-item4 {      
+    grid-column: 1;
+    grid-row: 2;
+}
+.grid-item5 {      
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.grid-item6 {      
+    grid-column: 3;
+    grid-row: 2;
+} 
+
+/* bara de scroll, ii luata de pe net, astea is detaliile ei care urmeaza */
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+.container::after{
+    content: " ";
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+
+.footer{
+    background-image: url("grafic2.png");
+    color: #000;
+    padding:10px;
+    text-align: center;
+}
+

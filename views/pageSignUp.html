@@ -1,0 +1,186 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="./styles/_header.css">
+  <link rel="stylesheet" href="./styles/pageSignUp.css">
+
+</head>
+
+<body>
+
+
+  <div class="header-wrapper">
+    <div class="center">
+      <header>
+        <!-- <div class="header-left">
+          
+        </div> -->
+        <div class="header-right">
+          <img src="./resources/logo/logo.png" class="logo">
+          <ul class="main-nav">
+            <li class="active"><a href="./firstPageNoLog.html"><span>Home</span></a></li>
+
+            <div class="dropdown">
+              <li><a href="#"><span>Authenticate</span></a>
+                <div class="dropdown-content">
+                  <a href="./pageSignIn.html">Sign in</a>
+                  <a href="./pageSignUp.html">Sign Up</a>
+                </div>
+              </li>
+            </div>
+            <div class="dropdown">
+              <li><a href="./pageOportunity.html"><span>opportunities</span></a>
+                <div class="dropdown-content">
+                  <a href="#">Internships</a>
+                  <a href="#">Trainings</a>
+                  <a href="#">Conferences</a>
+                </div>
+              </li>
+            </div>
+
+            <li><a href="#"><span>Jobs</span></a></li>
+            <li><a href="#"><span>
+                  <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                  <form class="searchform" action="" name="lupa">
+                    <input type="text" placeholder="Search.." name="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+
+                </span></a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="scrollbar">
+    <div class="force-overflow"></div>
+  </div>
+
+
+  <div class="content">
+  <form action="firstPageLoggedin.html" method="post" name="formular">
+
+    <h1>Join our community and develop yourself!</h1>
+
+    <fieldset>
+      <legend><span class="number">1</span>Your basic info</legend>
+      <label for="name">First name:</label>
+      <input type="text" id="name" name="user_name" required>
+
+      <label for="name">Last name:</label>
+      <input type="text" id="name" name="user_name" required>
+
+      <label for="name">Username:</label required>
+      <input type="text" id="name" name="user_name">
+
+      <label for="name">Country:</label>
+      <input type="text" id="country" name="user_country" required>
+
+      <label for="name">City:</label>
+      <input type="text" id="city" name="user_city" required>
+
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" name="user_email" required>
+
+      <label for="phone">Phone number:</label>
+      <input type="tel" id="tel" name="user_tel" required>
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="user_gender"><label for="gender" class="light">Male</label><br>
+      <input type="radio" id="female" name="user_gender"><label for="gender" class="light">Female</label><br>
+      <input type="radio" id="other" name="user_gender"><label for="gender" class="light">Other</label>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="user_password" required>
+
+      <label for="password">Confirm password:</label>
+      <input type="password" id="password" name="user_password" required>
+
+
+
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="number">2</span>Your profile</legend>
+      <label for="bio">Biography:</label>
+      <textarea id="bio" name="user_bio"></textarea>
+
+      <label for="name">Occupation:</label>
+      <input type="text" id="name" name="user_occupation">
+
+      <label for="name">Company/School:</label>
+      <input type="text" id="name" name="user_company">
+
+      <label for="job">Job Role:</label>
+      <select id="job" name="user_job">
+        <optgroup label="Web">
+          <option value="frontend_developer">Front-End Developer</option>
+          <option value="php_developor">PHP Developer</option>
+          <option value="python_developer">Python Developer</option>
+          <option value="rails_developer"> Rails Developer</option>
+          <option value="web_designer">Web Designer</option>
+          <option value="WordPress_developer">WordPress Developer</option>
+        </optgroup>
+        <optgroup label="Mobile">
+          <option value="Android_developer">Androild Developer</option>
+          <option value="iOS_developer">iOS Developer</option>
+          <option value="mobile_designer">Mobile Designer</option>
+        </optgroup>
+        <optgroup label="Business">
+          <option value="business_owner">Business Owner</option>
+          <option value="freelancer">Freelancer</option>
+        </optgroup>
+      </select>
+
+      <label>Interests:</label>
+      <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light"
+        for="development">Development</label><br>
+      <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light"
+        for="design">Design</label><br>
+      <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light"
+        for="business">Business</label>
+
+      <label>Programming languages and other interests:</label>
+      <input type="checkbox" id="C#" value="language_interest" name="language"><label class="light2"
+        for="language">C#</label>
+      <input type="checkbox" id="C/C++" value="language_interest" name="language"><label class="light2"
+        for="language">C++</label>
+      <input type="checkbox" id="Java" value="language_interest" name="language"><label class="light2"
+        for="language">Java</label>
+      <input type="checkbox" id="JavaScript" value="language_interest" name="language"><label class="light2"
+        for="language">JavaScript</label>
+      <input type="checkbox" id="HTML/CSS" value="language_interest" name="language"><label class="light2"
+        for="language">HTML/CSS</label>
+      <input type="checkbox" id="PHP" value="language_interest" name="language"><label class="light2"
+        for="language">PHP</label>
+      <input type="checkbox" id="Python" value="language_interest" name="language"><label class="light2"
+        for="language">Python</label>
+      <input type="checkbox" id="Mathematics" value="language_interest" name="language"><label class="light2"
+        for="language">Mathematics</label>
+      <input type="checkbox" id="Physics" value="language_interest" name="language"><label class="light2"
+        for="language">Physics</label>
+      <input type="checkbox" id="Other" value="language_interest" name="language"><label class="light2"
+        for="language">Other</label>
+
+    </fieldset>
+    <legend><span class="number">3</span>Recommend yourself</legend>
+    <label for="url">LinkedIn Profile:</label>
+    <input type="url" id="url" name="user_url">
+    <label for="url">Git:</label>
+    <input type="url" id="url" name="user_url">
+    <fieldset>
+
+    </fieldset>
+    <button type="submit" class="submit">Sign Up</button>
+  </form>
+  </div>
+
+  <div>
+    <footer class="footer">Copyright &copy; 2019 || Designed by Team</footer>
+  </div>
+</body>
+
+</html>
