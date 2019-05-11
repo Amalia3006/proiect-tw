@@ -1,0 +1,141 @@
+{% set title = "Home" %}
+{% set username = data.user_name[0] %}
+
+{% extends "./_layout.njk" %}
+
+{% block content %}
+<link rel="stylesheet" href="/styles/pageSignUp.css">
+
+<div class="scrollbar">
+    <div class="force-overflow"></div>
+</div>
+
+<div class="content">
+    <form action="/register" method="post" name="formular">
+
+        <h1>Join our community and develop yourself!</h1>
+
+        {% if data.error %}
+        <div style="padding-bottom: 10px;">
+            <p style="background:red; color:white;">{{ data.error }}</p>
+        </div>
+        {% endif %}
+
+        <fieldset>
+            <legend><span class="number">1</span>Your basic info</legend>
+
+            <label for="name">First name:</label>
+            <input type="text" id="name" name="user_name" value="{{ data.user_name[0] }}" required>
+
+            <label for="name">Last name:</label>
+            <input type="text" id="name" name="user_name" value="{{ data.user_name[1] }}" required>
+
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="user_name" value="{{ data.user_name[2] }}" required>
+
+            <label for="name">Country:</label>
+            <input type="text" id="country" name="user_country" value="{{ data.user_country }}" required>
+
+            <label for="name">City:</label>
+            <input type="text" id="city" name="user_city" value="{{ data.user_city }}" required>
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" value="{{ data.user_email }}" required>
+
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="tel" name="user_tel" value="{{ data.user_tel }}" required>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" value="male" name="user_gender" {% if data.user_gender == "male"%} checked="checked" {% endif %}><label for="male" class="light">Male</label><br>
+            <input type="radio" id="female" value="female" name="user_gender" {% if data.user_gender == "female"%} checked="checked" {% endif %}><label for="female" class="light">Female</label><br>
+            <input type="radio" id="other" value="other" name="user_gender" {% if data.user_gender == "other"%} checked="checked" {% endif %}><label for="other" class="light">Other</label>
+
+            {# todo: minlen + maxlen #}
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="user_password" required>
+
+            <label for="password">Confirm password:</label>
+            <input type="password" id="password" name="user_password" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><span class="number">2</span>Your profile</legend>
+            <label for="bio">Biography:</label>
+            <textarea id="bio" name="user_bio">{{ data.user_bio }}</textarea>
+
+            <label for="name">Profession:</label>
+            <input type="text" id="name" name="user_profession" value="{{ data.user_profession }}">
+
+            <label for="name">Company/School:</label>
+            <input type="text" id="name" name="user_company" value="{{ data.user_company }}">
+
+            <label for="job">Job Role:</label>
+            <select id="job" name="user_job_role">
+                <option value="none" {% if data.user_job_role == "none"%} selected="selected" {% endif %}>None</option>
+                <optgroup label="Web">
+                    <option value="frontend_developer" {% if data.user_job_role == "frontend_developer"%} selected="selected" {% endif %}>Front-End Developer</option>
+                    <option value="php_developor" {% if data.user_job_role == "php_developor"%} selected="selected" {% endif %}>PHP Developer</option>
+                    <option value="python_developer" {% if data.user_job_role == "python_developer"%} selected="selected" {% endif %}>Python Developer</option>
+                    <option value="rails_developer" {% if data.user_job_role == "rails_developer"%} selected="selected" {% endif %}> Rails Developer</option>
+                    <option value="web_designer" {% if data.user_job_role == "web_designer"%} selected="selected" {% endif %}>Web Designer</option>
+                    <option value="WordPress_developer" {% if data.user_job_role == "WordPress_developer"%} selected="selected" {% endif %}>WordPress Developer</option>
+                </optgroup>
+                <optgroup label="Mobile">
+                    <option value="Android_developer" {% if data.user_job_role == "Android_developer"%} selected="selected" {% endif %}>Androild Developer</option>
+                    <option value="iOS_developer" {% if data.user_job_role == "iOS_developer"%} selected="selected" {% endif %}>iOS Developer</option>
+                    <option value="mobile_designer" {% if data.user_job_role == "mobile_designer"%} selected="selected" {% endif %}>Mobile Designer</option>
+                </optgroup>
+                <optgroup label="Business">
+                    <option value="business_owner" {% if data.user_job_role == "business_owner"%} selected="selected" {% endif %}>Business Owner</option>
+                    <option value="freelancer" {% if data.user_job_role == "freelancer"%} selected="selected" {% endif %}>Freelancer</option>
+                </optgroup>
+            </select>
+
+            <label>Interests:</label>
+            <input type="checkbox" id="development" value="development" name="user_interest" {% if data.user_interest | contains("development") %} checked="checked" {% endif %}><label class="light"
+        for="development">Development</label><br>
+            <input type="checkbox" id="design" value="design" name="user_interest" {% if data.user_interest | contains("design") %} checked="checked" {% endif %}><label class="light"
+        for="design">Design</label><br>
+            <input type="checkbox" id="business" value="business" name="user_interest" {% if data.user_interest | contains("business")%} checked="checked" {% endif %}><label class="light"
+        for="business">Business</label>
+
+            <label>Programming languages and other interests:</label>
+            <input type="checkbox" id="C#" value="C#" name="language" {% if data.language | contains("C#")%} checked="checked" {% endif %}><label class="light2"
+        for="C#">C#</label>
+            <input type="checkbox" id="C/C++" value="C++" name="language" {% if data.language | contains("C++")%} checked="checked" {% endif %}><label class="light2"
+        for="C/C++">C++</label>
+            <input type="checkbox" id="Java" value="Java" name="language" {% if data.language | contains("Java")%} checked="checked" {% endif %}><label class="light2"
+        for="Java">Java</label>
+            <input type="checkbox" id="JavaScript" value="Javascript" name="language" {% if data.language | contains("Javascript")%} checked="checked" {% endif %}><label class="light2"
+        for="JavaScript">JavaScript</label>
+            <input type="checkbox" id="HTML/CSS" value="HTML/CSS" name="language" {% if data.language | contains("HTML/CSS")%} checked="checked" {% endif %}><label class="light2"
+        for="HTML/CSS">HTML/CSS</label>
+            <input type="checkbox" id="PHP" value="PHP" name="language" {% if data.language | contains("PHP")%} checked="checked" {% endif %}><label class="light2"
+        for="PHP">PHP</label>
+            <input type="checkbox" id="Python" value="Python" name="language" {% if data.language | contains("Python")%} checked="checked" {% endif %}><label class="light2"
+        for="Python">Python</label>
+            <input type="checkbox" id="Mathematics" value="Mathematics" name="language" {% if data.language | contains("Mathematics")%} checked="checked" {% endif %}><label class="light2"
+        for="Mathematics">Mathematics</label>
+            <input type="checkbox" id="Physics" value="Physics" name="language" {% if data.language | contains("Physics")%} checked="checked" {% endif %}><label class="light2"
+        for="Physics">Physics</label>
+            <input type="checkbox" id="Other" value="Other" name="language" {% if data.language | contains("Other")%} checked="checked" {% endif %}><label class="light2"
+        for="Other">Other</label>
+    </fieldset>
+
+    <fieldset>
+        <legend><span class="number">3</span>Recommend yourself</legend>
+        <label for="user_url">LinkedIn Profile:</label>
+        <input type="url" id="user_url" name="linkedin_user_url" value="{{ data.linkedin_user_url }}" >
+        <label for="user_url">Github:</label>
+        <input type="url" id="user_url" name="github_user_url" value="{{ data.github_user_url }}">
+    </fieldset>
+    
+    <button type="submit" class="submit">Sign Up</button>
+    </form>
+</div>
+
+<div>
+    <footer class="footer">Copyright &copy; 2019 || Designed by Team</footer>
+</div>
+
+{% endblock content %}

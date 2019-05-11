@@ -1,52 +1,51 @@
 /* setam ceva by default pt tot continutul paginii */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 /* toate partile din body vor avea by default urmatoarele particularitati */
-body{
+body {
     background-color: white;
     margin: 0;
     font-family: Bookman;
-    font-size:14px;
+    font-size: 14px;
     color: #001620;
-    width:100%;
+    width: 100%;
 }
 /* seteaza un max width si o incadrare de 100% pt partea de sus cu meniul si sigla */
-.center{
+.center {
     /* max-width: 1180px; */
     margin: 0 auto;
     width: 100%;
 }
 /* marginile in care sta meniul si sigla, gen dunga aia de dedesupt */
-.header-wrapper{
-   padding: 30px 0;
-    border-bottom: 2px solid #001620;   
+.header-wrapper {
+    padding: 30px 0;
+    border-bottom: 2px solid #001620;
 }
-.logo{
+.logo {
     height: 70px;
-    margin-left:3%;
+    margin-left: 3%;
 }
 /* referitoare la logo TeaSK din stanga sus.. aici se va inlocui cu logo-ul din Illustator*/
 .header-left .logo {
     font: italic bold 30px Bookman;
-    text-shadow: -2px 1px 0 #FBEADD, -10px 5px 0 hsla(0, 39%, 81%, 0.363);
+    text-shadow: -2px 1px 0 #fbeadd, -10px 5px 0 hsla(0, 39%, 81%, 0.363);
     font-weight: bold;
     letter-spacing: 3px;
     color: #001620;
 }
 
 /* setam cum vor fi afisate logoul, si butoanele din menu, alea de sus */
-header{
+header {
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
 }
 /*setam unde si cum vor sta butoanele de search: articolele sunt impachetate spre sfarsitul liniei (flex-end) */
-.header-right{
+.header-right {
     flex-grow: 1;
     display: flex;
     justify-content: space-around;
@@ -66,24 +65,24 @@ header{
     margin-right: 20px;
 }
 /* pt ultimul buton din lista, nu voi mai pune acea margine drapta pt ca el nu mai are de cine sa stea departat */
-.main-nav li:last-of-type{
+.main-nav li:last-of-type {
     margin-right: 0;
 }
 /*aici setam detaliile pt ceea ce se afla in buton, gen culoarea textului, marimea fontului si stilul, alinierea etc */
-.main-nav li a{
+.main-nav li a {
     display: block;
     color: #001620;
     text-transform: uppercase;
-    padding : 13px;
+    padding: 13px;
     font-size: 13px;
-    font-weight: bold; 
+    font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.25s ease, color 0.25s ease; /*cat de repede se schimba culoarea textului cand ne pozitionam pe el*/
 }
 /*setari pt atunci cand suntem pe pagina corespunzatoare butonului, gen deja am dat click*/
- .main-nav li.active a {
+.main-nav li.active a {
     background: #040f14;
-    color: #FBEADD;
+    color: #fbeadd;
     border-radius: 5px;
 }
 /*setari pt atunci cand ne ducem cu mouse-ul peste buton*/
@@ -93,19 +92,19 @@ header{
     border-radius: 5px;
 }
 /* butonul de serch e ultimul, pt el nu o sa mai avem hover backgroung si altele*/
- .main-nav li:last-of-type a:hover{
+.main-nav li:last-of-type a:hover {
     background: none;
 }
 /* pt ultimul buton (search) nu vom mai avea nici setare pt atunci cand e activ*/
-.main-nav li:last-of-type.active a{
+.main-nav li:last-of-type.active a {
     background: none;
-}  
+}
 /* butonul de search, gen cerculetul initial*/
 .searchform {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transition: all 0.25s;
     width: 40px;
     height: 40px;
@@ -116,7 +115,7 @@ header{
     padding: 5px;
 }
 /* ne referim aici la setari pt acel Serch din interiorul casutei de search, si mai apoi la texul pe care noi il vom introduce*/
-input[name="Search"]{
+input[name="Search"] {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,7 +130,7 @@ input[name="Search"]{
     padding: 0 25px;
 }
 /* detalii pt lupa aia mica din interiorul cerculetului */
-.fa{
+.fa {
     box-sizing: border-box;
     padding: 10px;
     width: 35px;
@@ -146,15 +145,15 @@ input[name="Search"]{
     transition: all 0.25s;
 }
 /* cand mergem pe butonul de search cu mouseul se extinde la 200px */
-.searchform:hover{
+.searchform:hover {
     width: 200px;
     cursor: pointer; /* gen cum arata mouse-ul cand esti pe linia searchului, e manuta aia de pointeaza */
 }
-.searchform:hover input{
+.searchform:hover input {
     display: block;
 }
 /* in momentul in care extindem cerculetul de search se schimba culoarea cercului si a lupei din interior, gen cand sunem cu mouseul pe el */
-.searchform:hover .fa{
+.searchform:hover .fa {
     background: #040f14;
     color: white;
 }
@@ -163,7 +162,7 @@ input[name="Search"]{
     position: relative;
     display: inline-block;
 }
-  
+
 /* continutul meniului dropdown (care va fi ascuns by default) */
 .dropdown-content {
     display: none;
@@ -174,7 +173,7 @@ input[name="Search"]{
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.534);
     z-index: 1;
 }
-  
+
 /* link-urile din meniul dropdown, cum arata, culoare etc */
 .dropdown-content a {
     color: black;
@@ -182,7 +181,7 @@ input[name="Search"]{
     text-decoration: none;
     display: block;
 }
-  
+
 /* culoare pt link urile din dropdown menu, cand treci cu mouse pe ele*/
 .dropdown-content a:hover {
     background-color: rgb(36, 14, 14);
@@ -196,33 +195,33 @@ input[name="Search"]{
 /* culoarea butonului initial care se schimba atunci cand suntem pe el si se afiseaza meniiul dropdown */
 .dropdown:hover {
     background: rgba(4, 15, 20, 0.637);
-    color:rgb(5, 5, 5);
+    color: rgb(5, 5, 5);
     border-radius: 5px;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     header {
         flex-direction: column;
     }
-    .main-nav{
+    .main-nav {
         flex-direction: column;
     }
-    button[type="submit"]{
+    button[type="submit"] {
         display: block;
         cursor: pointer;
     }
-    input[type="text"]{
+    input[type="text"] {
         display: block;
     }
-    .searchform{
-        width:200px;
+    .searchform {
+        width: 200px;
         cursor: pointer;
     }
     .main-nav li {
         margin-right: 0px;
     }
 
-    .grid-container{
+    .grid-container {
         background-repeat: no-repeat;
         background-size: cover;
         overflow: auto;
@@ -234,7 +233,6 @@ input[name="Search"]{
         background-image: url("../resources/background/space3.png");
         flex-wrap: wrap;
     }
-
 }
 ul * {
     text-align: center;

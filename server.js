@@ -1,82 +1,36 @@
-const http = require('http');
-const filesys = require('fs');
-const util = require('util');
-const url = require('url-parse');
-const uuid = require('uuid');
+/*todo:
+    1. mysql
+    2. templateuri
+    3. routes: 
+        3.1 resources("text/css", "image/webp", js scripts)
+        3.2 /api/
+    4. preluarea joburilor si oportunitatilor de pe diverse siteuri: bestjobs, junio etc
+    5. crearea de conturi:
+        5.1 preluarea de date de pe github, linkedIn etc
+        5.2 locatia: din browser, ip tracker, locatia ultimului job etc
+    6. recomandari
+    7. evolutia utilizatorului
+    8. editat profil
+    9. header: tabul curent colorat cu negru
+    10. pagina forgot password
+*/
+const http = require("http");
+const mongoose = require("mongoose");
 
-//------
-const { init, views, viewDir } = require("./pageManager");
-init();
-// console.log(views);
-//------
-const homeView = "firstPageNoLog";
+const handleRequest = require("./requestHandler");
 
-// const accepedFileTypes = [ "text/html", "text/css", "image/webp" ];
+mongoose.connect(
+    "mongodb://localhost:27017/teask",
+    { useNewUrlParser: true, useCreateIndex: true },
+    err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("MongoDB connected");
+    }
+);
 
 const port = 3000;
 http.createServer(handleRequest).listen(port);
-
-function handleRequest(request, response) {
-    // console.log("Request: " + util.inspect(request['headers']['host']) + util.inspect(request['url']));
-    console.log("Request: " + JSON.stringify(request['headers']['host'] + request['url']));
-
-    // console.log(request['url']);
-    //response.write("hello");
-
-    let file = String(request['url']);
-    let fileType = String(request['headers']['accept']).split(",")[0];
-    // console.log(file + " ### " + fileType);
-
-    if(file == "/") {
-        file = homeView;
-    }
-    // console.log("--->\n" + file + "\n<---");
-    // console.log(views[homeView]);
-
-    if(fileType == "text/html") {
-        if(file.indexOf(".html") >= 0) {
-            file = file.split(".html")[0];
-        }
-        if(file[0] == '/') {
-            file = file.substr(1);
-        }
-        if(views[file] == undefined || views[file] == null) {
-            send404(response);
-            return;
-        }
-        response.writeHead(200, {"Content-type": fileType});
-        response.write(views[file]);
-        response.end();
-        return;
-    }
-
-    file = viewDir + file;
-    // console.log(file);
-    try {
-        filesys.readFile(file, null, (err, data) => {
-            if(err) {
-                send404(response);
-                return;
-            }
-            response.writeHead(200, {"Content-type": fileType});
-            response.write(data);
-            response.end();
-        });
-    } catch (error) {
-        send404(response);
-        return;
-    }
-}
-
-function send404(response) {
-    response.writeHead(404);
-    response.write(views["404page"]);
-    response.end();
-}
-
-function log(data) {
-    filesys.writeFile('./devlogs/log' + uuid(), util.inspect(data), (err) => {
-        if (err) throw err;
-    });
-}
-
+console.log("Server listening on port " + port);

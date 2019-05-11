@@ -3,18 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TeaSK</title>
-	<link rel="stylesheet" href="./styles/_header.css">
+	{% if title %}
+		<title>{{ title }}</title>
+	{% else %}
+		<title>TeaSK</title>
+	{% endif %}
 </head>
 <body>
-
 	{% include "./_header.njk" %}
 
 	{% block content %}
 	{% endblock %}
 
-<!-- 	<div>
-		<footer class="footer">Copyright &copy; 2019 || Designed by Team</footer>
-	</div> -->
+	{# todo: add _footer.css and remove every footer from all templates #}
+	{# {% include "./_footer.njk" %} #}
 </body>
 </html>

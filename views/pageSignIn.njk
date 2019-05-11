@@ -1,0 +1,45 @@
+{% set title = "TeaSK-Home" %}
+{# {% set userConn = false %} #}
+
+{% extends "./_layout.njk" %}
+
+{% block content %}
+<link rel="stylesheet" href="/styles/pageSignIn.css">
+
+<div class="scrollbar">
+    <div class="force-overflow"></div>
+</div>
+
+<div class="content">
+    <form action="/login" method="post" name="formular">
+  
+        <h1>Welcome to TeaSK</h1>
+        <p>Let's step on the road of developing your career</p>
+        
+        {% if data.error %}
+        <div style="padding-bottom: 10px;">
+            <p style="background:red; color:white;">{{ data.error }}</p>
+        </div>
+        {% endif %}
+
+        <fieldset>
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="user_name">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="user_password">
+        </fieldset>
+        <label>
+            <input type="checkbox" checked="checked" name="remember">Remember me</input>
+        </label>
+        <button type="button" class="signupbtn"><a href="/register">Sign Up</a></button>
+        {# todo: forgot password page #}
+        <span class="psw"><a href="#">Forgot password?</a></span>
+    
+        <button type="submit" class="submit">Sign In</button>
+    </form>
+</div>
+<div>
+    <footer class="footer">Copyright &copy; 2019 || Designed by Team</footer>
+</div>
+{% endblock content %}

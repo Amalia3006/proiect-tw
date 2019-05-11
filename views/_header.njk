@@ -1,43 +1,82 @@
+<link rel="stylesheet" href="/styles/_header.css">
+
 <div class="header-wrapper">
     <div class="center">
         <header>
-            <!-- <div class="header-left">
-                <ul class="main-nav">
-            </div> -->
             <div class="header-right">
-                <img src="./resources/logo/logo.png" class="logo">
+                {% if username %}
+                    <img src="/resources/logo/logo.png" class="logo">
 
-                <ul class="main-nav">
-                    <li class="active"><a href="firstPageNoLog.html"><span>Home</span></a></li>
+                    <ul class="main-nav">
+                        <li class="active"><a href="/home/{{ username }}"><span>Home</span></a></li>
 
-                    <div class="dropdown">
-                        <li><a href="#"><span>authenticate</span></a>
-                            <div class="dropdown-content">
-                                <a href="./pageSignIn.html">Sign in</a>
-                                <a href="./pageSignUp.html">Sign up</a>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="dropdown">
-                        <li><a href="./pageOportunity.html"><span>Opportunities</span></a>
-                            <div class="dropdown-content">
-                                <a href="#">Internships</a>
-                                <a href="#">Trainings</a>
-                                <a href="#">Conferences</a>
-                            </div>
-                        </li>
-                    </div>
-                    <li><a href="./pageJobs.html"><span>Jobs</span></a></li>
-                    <li><a href="#"><span>
-                                <link rel="stylesheet"
-                                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <form class="searchform" action="">
-                                    <input type="text" placeholder="Search.." name="Search">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
+                        <div class="dropdown">
+                            <li><a href="/profile/{{ username }}"><span>Personal Profile</span></a>
+                                <div class="dropdown-content">
+                                    <a href="#">CV</a>
+                                    <a href="#">Applications</a>
+                                    <a href="#">Favorites</a>
+                                    <a href="/logout/" >Log out</a>
+                                </div>
+                            </li>
+                        </div>
 
-                            </span></a></li>
-                </ul>
+                        <div class="dropdown">
+                            <li><a href="/events/{{ username }}"><span>opportunities</span></a>
+                                <div class="dropdown-content">
+                                    <a href="#">Internships</a>
+                                    <a href="#">Trainings</a>
+                                    <a href="#">Conferences</a>
+                                </div>
+                            </li>
+                        </div>
+
+                        <li><a href="/jobs/{{ username }}"><span>Jobs</span></a></li>
+
+                        <li><a href="#"><span>
+                                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <form class="searchform" action="">
+                                        <input type="text" placeholder="Search.." name="Search">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+
+                                </span></a></li>
+                    </ul>
+                {% else %}
+                    <img src="/resources/logo/logo.png" class="logo">
+
+                    <ul class="main-nav">
+                        <li class="active"><a href="/"><span>Home</span></a></li>
+
+                        <div class="dropdown">
+                            <li><a href="#"><span>authenticate</span></a>
+                                <div class="dropdown-content">
+                                    <a href='/login'>Sign in</a>
+                                    <a href='/register'>Sign up</a>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="dropdown">
+                            <li><a href='/events'><span>Opportunities</span></a>
+                                <div class="dropdown-content">
+                                    <a href="#">Internships</a>
+                                    <a href="#">Trainings</a>
+                                    <a href="#">Conferences</a>
+                                </div>
+                            </li>
+                        </div>
+                        <li><a href='/jobs'><span>Jobs</span></a></li>
+                        <li><a href="#"><span>
+                                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <form class="searchform" action="">
+                                        <input type="text" placeholder="Search.." name="Search">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </span></a></li>
+                    </ul>
+                {% endif %}
             </div>
         </header>
     </div>
