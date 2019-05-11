@@ -1,0 +1,76 @@
+{% set title = "Profile" %}
+{% set username = data.username %}
+
+{% extends "./_layout.njk" %}
+
+{% block content %}
+<link rel="stylesheet" href="/styles/pageProfile.css">
+
+<div class="sub-header">Develop your career with us</div>
+<div class="scrollbar">
+    <div class="force-overflow"></div>
+</div>
+
+<div class="container">
+    <div class="bio">
+        <h1>{{ data.fname }} {{data.lname}}</h1>
+        {# todo: find a way to send profile pic #}
+        {# <img src="/resources/user/user.png" class="user"> #}
+        <img src="/image/{{ data.username }}" class="user">
+        {# <img src="/resources/user/user.png" class="user"> #}
+        <form method="POST" enctype="multipart/form-data" action="/image/{{ data.username }}" nume="pics" > 
+         <input type="file" name="profileImg" id="profileImg" accept ="image/*">
+        <label for="profieImg"></label>
+        <button type="Submit">Submit</button>
+        </form>
+        <p>{{ data.profession }} @ {{ data.company }}</p> 
+        <p>{{ data.bio }}</p>
+    </div>
+    
+    <div class= "details">
+        <h1>About</h1>
+        <p class="name">First name: <span id="name">{{ data.fname }}</span></p>
+        <p class="name">Last name: <span id="name">{{ data.lname }}</span></p>
+        <p class="info">Country: <span id="name">{{ data.country }}</span></p>
+        <p class="info">City: <span id="name">{{ data.city }}</span></p>
+        <p class="info">Phone number: <span id="name">{{ data.tel }}</span></p>
+        <p class="info">Email: <span id="name">{{ data.email }}</span></p>
+        <p class="info">Profession: <span id="name">{{ data.profession }}</span></p>
+        {# <p class="info">Occupation: <span id="name">{{ data.occupation }}</span></p> #}
+        <p class="info">Company/School: <span id="name">{{ data.company }}</span></p>
+        <p class="info">Areas of interest: <span id="name">{{ data.interests }}</span></p>
+    </div>
+
+    <div class="chart">
+        <h1>Skills</h1>
+        <br><br>
+
+        {# todo: procentele sunt hardcodate in css, de refacut animatia cu valori dinamice #}
+        <h2>HTML / CSS</h2>
+        <div class="line line1">50%</div>
+        <h2>C/C++</h2>
+        <div class="line line2">85%</div>
+        <h2>Java</h2>
+        <div class="line line3">70%</div>
+        <h2>PHP</h2>
+        <div class="line line4">20%</div>
+
+    </div>
+
+    <div class= "exp">
+        <h1>Experience</h1>
+        {% for el in data.experience %}
+            <p class="position">{{ el[0] }}</p>
+            <p class="period">{{ el[1] }}</p>
+        {% endfor %}
+    </div>
+
+    <div class= "edu">
+        <h1>Education</h1>
+        {% for el in data.education %}
+            <p class="college">{{ el }}</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock content %}

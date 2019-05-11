@@ -1,8 +1,10 @@
+{% set title = "Home" %}
+{# {% set userConn = false %} #}
+
 {% extends "./_layout.njk" %}
 
 {% block content %}
-
-<link rel="stylesheet" href="./styles/firstPageNoLog.css">
+<link rel="stylesheet" href="/styles/firstPageNoLog.css">
 
 <div class="sub-header">Develop your career with us</div>
 <div class="container">
@@ -20,7 +22,7 @@
     <div class="content2">
         <h1>You can find out the most popular career developing opportunities</h1>
         <div class="grid-container">
-            <div class="grid grid-item4"><img src="./resources/logoFirma/mi.png" name="firma">
+            <div class="grid grid-item4"><img src="/resources/logoFirma/mi.png" name="firma">
                 <h1 class="eventtitle">Microsoft Ignite, November 4-8, Orlando, Florida </h1>
                 <p class="eventdescription">Microsoft Ignite is Microsoft’s annual meeting designed for enterprise
                     professionals, services, and products.
@@ -39,7 +41,7 @@
 
             </div>
 
-            <div class="grid grid-item5"><img src="./resources/logoFirma/ITarena.png" name="firma">
+            <div class="grid grid-item5"><img src="/resources/logoFirma/ITarena.png" name="firma">
                 <h1 class="eventtitle">IT Arena, September 27-29, Lviv, Ukraine </h1>
                 <p class="eventdescription">IT Arena is the largest tech event in Ukraine and Eastern Europe.
                     The three-day conference, conducted exclusively in English, brings together more than 2,000
@@ -55,7 +57,7 @@
 
             </div>
 
-            <div class="grid grid-item6"><img src="./resources/logoFirma/ws.jpg" name="firma">
+            <div class="grid grid-item6"><img src="/resources/logoFirma/ws.jpg" name="firma">
                 <h1 class="eventtitle">World Summit AI, October 9-10, Amsterdam, Netherlands</h1>
                 <p class="eventdescription">The World Summit Artificial Intelligence (AI) is a unique platform for
                     all AI innovations and projects.
@@ -67,7 +69,6 @@
                 </p>
                 <button type="submit" class="view">View details</button>
 
-
             </div>
         </div>
 
@@ -76,7 +77,7 @@
 
             <div class="grid-container">
                 <div class="grid grid-item1">
-                    <img src="./resources/firme/Yonder.png" name="firma">
+                    <img src="/resources/firme/Yonder.png" name="firma">
                     <h1 class="jobtitle">FRONT-END DEVELOPER (REACT), MID/SENIOR LEVEL, CLUJ-NAPOCA</h1>
                     <p class="jobdescription">You will be working with React,
                         Redux and NodeJS on a generic business process automation tool.
@@ -88,22 +89,20 @@
                     <button type="submit" class="view">View details</button>
                 </div>
                 <div class="grid grid-item2">
-                    <img src="./resources/firme/Conti.png" name="firma">
+                    <img src="/resources/firme/Conti.png" name="firma">
                     <h1 class="jobtitle">QA Automation Engineer for Mobile Devices</h1>
                     <p class="jobdescription">You will have the opportunity to contribute to the
                         development and delivery of our next-generation
                         Bitdefender Parental Advisor ecosystem.</p>
                     <button type="submit" class="view">View details</button>
-
                 </div>
-                <div class="grid grid-item3"><img src="./resources/firme/amazon.png" name="firma">
+                <div class="grid grid-item3"><img src="/resources/firme/amazon.png" name="firma">
                     <h1 class="jobtitle">Junior Software Developer (Based in Luxembourg)</h1>
                     <p class="jobdescription">The ideal candidate must be detail oriented,
                         have superior verbal and written communication skills, strong
                         organizational skills, able to juggle multiple tasks at once, able
                         to work independently and can maintain professionalism under pressure. </p>
                     <button type="submit" class="view">View details</button>
-
                 </div>
             </div>
         </div>
@@ -113,5 +112,4 @@
 <div>
     <footer class="footer">Copyright &copy; 2019 || Designed by Team</footer>
 </div>
-
-{% endblock %} 
+{% endblock content %}

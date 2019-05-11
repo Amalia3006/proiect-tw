@@ -1,0 +1,1760 @@
+
+
+====================================================================================================
+
+May 11th 2019, 3:28:37 pm
+
+'Request: "POST localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:37 pm
+
+IncomingMessage {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: true,
+     ended: true,
+     endEmitted: true,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     paused: false,
+     emitClose: true,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: false,
+  _events:
+   [Object: null prototype] {
+     end: [ [Function: resetHeadersTimeoutOnReqEnd], [Function] ],
+     error: [Function],
+     data: [Function] },
+  _eventsCount: 3,
+  _maxListeners: undefined,
+  socket:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1557577717768,
+        [Symbol(isReused)]: false },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 66,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 12745,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 67,
+        [Symbol(triggerId)]: 66 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  connection:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1557577717768,
+        [Symbol(isReused)]: false },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 66,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 12745,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 67,
+        [Symbol(triggerId)]: 66 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  httpVersionMajor: 1,
+  httpVersionMinor: 1,
+  httpVersion: '1.1',
+  complete: true,
+  headers:
+   { host: 'localhost:3000',
+     'user-agent':
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+     accept:
+      'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+     'accept-language': 'ro-RO,ro;q=0.8,en-US;q=0.6,en-GB;q=0.4,en;q=0.2',
+     'accept-encoding': 'gzip, deflate',
+     referer: 'http://localhost:3000/profile/Amalia',
+     'content-type':
+      'multipart/form-data; boundary=---------------------------322721559523648',
+     'content-length': '52352',
+     connection: 'keep-alive',
+     cookie:
+      'PHPSESSID=7bvpl1rher234gc9s453co4dp7; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImludGVyZXN0cyI6WyJkZXZlbG9wbWVudCJdLCJsYW5ndWFnZXMiOlsiSmF2YSJdLCJyZWdpc3RlcmVkT24iOiIyMDE5LTA1LTExVDA3OjMyOjIxLjUwM1oiLCJfaWQiOiI1Y2Q2N2IzMDM5NDdhMTQyODBjM2YzZGQiLCJmbmFtZSI6IkFtYWxpYSIsImxuYW1lIjoiRGFtb2MtU2ltb24iLCJ1c2VybmFtZSI6IkFtYWxpYSIsImNvdW50cnkiOiJSb21hbmlhIiwiY2l0eSI6Iklhc2kiLCJlbWFpbCI6ImRhbW9jc2ltb25hbWFsaWFAZ21haWwuY29tIiwidGVsIjoiMDc0MzgzODE5OCIsImdlbmRlciI6ImZlbWFsZSIsInBhc3N3b3JkIjoiJDJiJDEwJC94QzNCWUJRSUMzWGFUaTNQRG5DTnVtbWRLazVFVFVVWEZmTjgwb3FuVERUU2hoVXFzdE82IiwiYmlvIjoiIiwicHJvZmVzc2lvbiI6IlN0dWRlbnQiLCJjb21wYW55IjoiVUFJQyBGSUkiLCJqb2JSb2xlIjoibm9uZSIsImxpbmtlZGluIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2FsaW5hLWFtYWxpYS1kJUM0JTgzbW9jLXNpbW9uLTgwNDQ1YjE2MS8iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vQW1hbGlhMzAwNiIsIl9fdiI6MH0sImlhdCI6MTU1NzU3NzMyNSwiZXhwIjoxNTU3NTc3OTI1fQ.al_7MJIbNITYh0tIKjHiDwtxOngVGTQOixP596ORB2w',
+     'upgrade-insecure-requests': '1' },
+  rawHeaders:
+   [ 'Host',
+     'localhost:3000',
+     'User-Agent',
+     'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+     'Accept',
+     'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+     'Accept-Language',
+     'ro-RO,ro;q=0.8,en-US;q=0.6,en-GB;q=0.4,en;q=0.2',
+     'Accept-Encoding',
+     'gzip, deflate',
+     'Referer',
+     'http://localhost:3000/profile/Amalia',
+     'Content-Type',
+     'multipart/form-data; boundary=---------------------------322721559523648',
+     'Content-Length',
+     '52352',
+     'Connection',
+     'keep-alive',
+     'Cookie',
+     'PHPSESSID=7bvpl1rher234gc9s453co4dp7; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImludGVyZXN0cyI6WyJkZXZlbG9wbWVudCJdLCJsYW5ndWFnZXMiOlsiSmF2YSJdLCJyZWdpc3RlcmVkT24iOiIyMDE5LTA1LTExVDA3OjMyOjIxLjUwM1oiLCJfaWQiOiI1Y2Q2N2IzMDM5NDdhMTQyODBjM2YzZGQiLCJmbmFtZSI6IkFtYWxpYSIsImxuYW1lIjoiRGFtb2MtU2ltb24iLCJ1c2VybmFtZSI6IkFtYWxpYSIsImNvdW50cnkiOiJSb21hbmlhIiwiY2l0eSI6Iklhc2kiLCJlbWFpbCI6ImRhbW9jc2ltb25hbWFsaWFAZ21haWwuY29tIiwidGVsIjoiMDc0MzgzODE5OCIsImdlbmRlciI6ImZlbWFsZSIsInBhc3N3b3JkIjoiJDJiJDEwJC94QzNCWUJRSUMzWGFUaTNQRG5DTnVtbWRLazVFVFVVWEZmTjgwb3FuVERUU2hoVXFzdE82IiwiYmlvIjoiIiwicHJvZmVzc2lvbiI6IlN0dWRlbnQiLCJjb21wYW55IjoiVUFJQyBGSUkiLCJqb2JSb2xlIjoibm9uZSIsImxpbmtlZGluIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2FsaW5hLWFtYWxpYS1kJUM0JTgzbW9jLXNpbW9uLTgwNDQ1YjE2MS8iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vQW1hbGlhMzAwNiIsIl9fdiI6MH0sImlhdCI6MTU1NzU3NzMyNSwiZXhwIjoxNTU3NTc3OTI1fQ.al_7MJIbNITYh0tIKjHiDwtxOngVGTQOixP596ORB2w',
+     'Upgrade-Insecure-Requests',
+     '1' ],
+  trailers: {},
+  rawTrailers: [],
+  aborted: false,
+  upgrade: false,
+  url: '/image/Amalia',
+  method: 'POST',
+  statusCode: null,
+  statusMessage: null,
+  client:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1557577717768,
+        [Symbol(isReused)]: false },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 66,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 12745,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 67,
+        [Symbol(triggerId)]: 66 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  _consuming: true,
+  _dumped: false }
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/profile/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/styles/pageProfile.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:28:38 pm
+
+'Request: "GET localhost:3000/resources/background/space3.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:50 pm
+
+'Request: "GET localhost:3000/profile/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/styles/pageProfile.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/favicon.ico"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:51 pm
+
+'Request: "GET localhost:3000/resources/background/space3.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:56 pm
+
+'Request: "POST localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:57 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:32:57 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/styles/firstPageNoLog.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/mi.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/ITarena.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/ws.jpg"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/firme/Conti.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/firme/Yonder.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/firme/amazon.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/styles/grafic2.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:00 pm
+
+'Request: "GET localhost:3000/resources/background/space2.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:01 pm
+
+'Request: "GET localhost:3000/login"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:01 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:01 pm
+
+'Request: "GET localhost:3000/styles/pageSignIn.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:01 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:01 pm
+
+'Request: "GET localhost:3000/resources/background/space.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "POST localhost:3000/login"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+IncomingMessage {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: false,
+     endEmitted: false,
+     reading: false,
+     sync: true,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     paused: true,
+     emitClose: true,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: true,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  _events:
+   [Object: null prototype] {
+     end: [Function: resetHeadersTimeoutOnReqEnd],
+     error: [Function] },
+  _eventsCount: 2,
+  _maxListeners: undefined,
+  socket:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 0,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 1056,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [Timeout],
+        _idleNext: [Timeout],
+        _idleStart: 25627,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 1057,
+        [Symbol(triggerId)]: 1056 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  connection:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 0,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 1056,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [Timeout],
+        _idleNext: [Timeout],
+        _idleStart: 25627,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 1057,
+        [Symbol(triggerId)]: 1056 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  httpVersionMajor: 1,
+  httpVersionMinor: 1,
+  httpVersion: '1.1',
+  complete: false,
+  headers:
+   { host: 'localhost:3000',
+     'user-agent':
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+     accept:
+      'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+     'accept-language': 'ro-RO,ro;q=0.8,en-US;q=0.6,en-GB;q=0.4,en;q=0.2',
+     'accept-encoding': 'gzip, deflate',
+     referer: 'http://localhost:3000/login',
+     'content-type': 'application/x-www-form-urlencoded',
+     'content-length': '51',
+     connection: 'keep-alive',
+     cookie: 'PHPSESSID=7bvpl1rher234gc9s453co4dp7',
+     'upgrade-insecure-requests': '1' },
+  rawHeaders:
+   [ 'Host',
+     'localhost:3000',
+     'User-Agent',
+     'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+     'Accept',
+     'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+     'Accept-Language',
+     'ro-RO,ro;q=0.8,en-US;q=0.6,en-GB;q=0.4,en;q=0.2',
+     'Accept-Encoding',
+     'gzip, deflate',
+     'Referer',
+     'http://localhost:3000/login',
+     'Content-Type',
+     'application/x-www-form-urlencoded',
+     'Content-Length',
+     '51',
+     'Connection',
+     'keep-alive',
+     'Cookie',
+     'PHPSESSID=7bvpl1rher234gc9s453co4dp7',
+     'Upgrade-Insecure-Requests',
+     '1' ],
+  trailers: {},
+  rawTrailers: [],
+  aborted: false,
+  upgrade: false,
+  url: '/login',
+  method: 'POST',
+  statusCode: null,
+  statusMessage: null,
+  client:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _connections: 5,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function],
+        [Symbol(ServerResponse)]: [Function],
+        [Symbol(asyncId)]: 13 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 0,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: null },
+     [Symbol(asyncId)]: 1056,
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _called: false,
+        _idleTimeout: 120000,
+        _idlePrev: [Timeout],
+        _idleNext: [Timeout],
+        _idleStart: 25627,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(unrefed)]: true,
+        [Symbol(asyncId)]: 1057,
+        [Symbol(triggerId)]: 1056 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  _consuming: false,
+  _dumped: false }
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/home/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/styles/firstPageLoggedin.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/mi.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/ITarena.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/logoFirma/ws.jpg"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/firme/Yonder.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/firme/Conti.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/firme/amazon.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:10 pm
+
+'Request: "GET localhost:3000/resources/background/space2.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/profile/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/styles/pageProfile.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:12 pm
+
+'Request: "GET localhost:3000/resources/background/space3.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:33:17 pm
+
+'Request: "POST localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/profile/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/styles/pageProfile.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/resources/background/space3.png"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:34 pm
+
+'Request: "GET localhost:3000/favicon.ico"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:48 pm
+
+'Request: "POST localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:48 pm
+
+'Request: "GET localhost:3000/profile/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:49 pm
+
+'Request: "GET localhost:3000/styles/_header.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:49 pm
+
+'Request: "GET localhost:3000/styles/pageProfile.css"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:49 pm
+
+'Request: "GET localhost:3000/image/Amalia"'
+
+====================================================================================================
+
+May 11th 2019, 3:35:49 pm
+
+'Request: "GET localhost:3000/resources/logo/logo.png"'
