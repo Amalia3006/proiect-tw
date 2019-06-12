@@ -10,6 +10,8 @@
                     <ul class="main-nav">
                         <li class="active"><a href="/home/{{ username }}"><span>Home</span></a></li>
 
+                    	{# <li class="dropdown">test</li> #}
+
                         <div class="dropdown">
                             <li><a href="/profile/{{ username }}"><span>Personal Profile</span></a>
                                 <div class="dropdown-content">
@@ -21,27 +23,30 @@
                             </li>
                         </div>
 
-                        <div class="dropdown">
+                        {# <div class="dropdown"> #}
                             <li><a href="/events/{{ username }}"><span>opportunities</span></a>
-                                <div class="dropdown-content">
+                                {# <div class="dropdown-content">
                                     <a href="#">Internships</a>
                                     <a href="#">Trainings</a>
                                     <a href="#">Conferences</a>
-                                </div>
+                                </div> #}
                             </li>
-                        </div>
+                        {# </div> #}
 
                         <li><a href="/jobs/{{ username }}"><span>Jobs</span></a></li>
 
-                        <li><a href="#"><span>
+                        <li>
+                            <a href="#">
+                                <span>
                                     <link rel="stylesheet"
                                         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                     <form class="searchform" action="">
                                         <input type="text" placeholder="Search.." name="Search">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </form>
-
-                                </span></a></li>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 {% else %}
                     <img src="/resources/logo/logo.png" class="logo">
@@ -57,15 +62,15 @@
                                 </div>
                             </li>
                         </div>
-                        <div class="dropdown">
+                        {# <div class="dropdown"> #}
                             <li><a href='/events'><span>Opportunities</span></a>
-                                <div class="dropdown-content">
+                                {# <div class="dropdown-content">
                                     <a href="#">Internships</a>
                                     <a href="#">Trainings</a>
                                     <a href="#">Conferences</a>
-                                </div>
+                                </div> #}
                             </li>
-                        </div>
+                        {# </div> #}
                         <li><a href='/jobs'><span>Jobs</span></a></li>
                         <li><a href="#"><span>
                                     <link rel="stylesheet"

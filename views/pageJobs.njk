@@ -72,7 +72,19 @@
 </div>
 
 <div class="grid-container">
-    <div class="grid grid-item1">
+	{% set i = 1 %}
+	{% for el in data.jobsInfo %}
+		<div class="grid grid-item{{ i }}">
+			<img src="{{ el.logo }}" name="firma">
+			<h1 class="jobtitle">{{ el.title }}, {{ el.date }}, {{ el.city }}</h1>
+			<p class="jobdescription">{{ el.description }}</p>
+			<form action="{{ el.website }}">
+				<button type="submit" class="view">View details</button>
+			</form>
+		</div>
+	{% set i = i + 1 %}
+	{% endfor %}
+    {# <div class="grid grid-item1">
         <img src="/resources/firme/Yonder.png" name="firma">
         <h1 class="jobtitle">FRONT-END DEVELOPER (REACT), MID/SENIOR LEVEL, CLUJ-NAPOCA</h1>
         <p class="jobdescription">You will be working with React, 
@@ -124,7 +136,7 @@
                 using current and emerging technologies. 
             The Systems Engineer assists in training less experienced personnel.</p>
         <button type="submit" class="view">View details</button>
-    </div> 
+    </div>  #}
 </div>
 
 <div>

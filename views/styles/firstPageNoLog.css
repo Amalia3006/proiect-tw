@@ -19,7 +19,7 @@
 }
 /*fundal si restul pt continut */
 .content {
-    background-image: url("../resources/background/space2.png");
+    background-image: url("/resources/background/space2.png");
     background-repeat: no-repeat;
     overflow: auto;
     height: auto;
@@ -68,7 +68,7 @@
 /*fundal si restul pt continut 2 */
 .content2 {
     background-color: #343246;
-    background-image: url("../resources/background/space2.png");
+    background-image: url("/resources/background/space2.png");
     background-repeat: no-repeat;
     overflow: auto;
     background-size: cover;
@@ -100,7 +100,7 @@
 /*fundal si restul pt continut 3 */
 .content3 {
     background-color: #343246;
-    background-image: url("../resources/background/space2.png");
+    background-image: url("/resources/background/space2.png");
     background-repeat: no-repeat;
     overflow: auto;
     height: auto;
@@ -137,7 +137,7 @@
     overflow: auto;
     display: grid;
     grid-row-gap: 5%;
-    background-image: url("../resources/background/space2.png");
+    background-image: url("/resources/background/space2.png");
     flex-wrap: wrap;
 }
 .grid {
@@ -261,7 +261,7 @@ img[name="firma"] {
 }
 
 .footer {
-    background-image: url("grafic2.png");
+    background-image: url("/resources/background/grafic2.png");
     color: #000;
     padding: 10px;
     text-align: center;

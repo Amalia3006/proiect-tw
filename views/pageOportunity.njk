@@ -52,15 +52,12 @@
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Ruby</label>
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Objective-C</label>
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">SQL</label>
-        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">C# (C- Sharp)</label>
+        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">C#</label>
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Programmer</label>
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Web Developer</label>
-        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Computer Systems
-            Analyst</label>
+        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Computer Systems Analyst</label>
         <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">IT Security</label>
-        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Network
-            Engineer</label><br>
-
+        <input type="checkbox" id="tags" value="tags" name="event_tags"><label class="eventtag">Tech convention</label><br>
 
         <form class="eventform" action="#">
             <input type="text" placeholder="other key words..." name="searchevent">
@@ -75,32 +72,45 @@
 </div>
 
 <div class="grid-container">
-    <div class="grid grid-item1">
-        <img src="/resources/logoFirma/codecamp.png" name="firma">
+	{% set i = 1 %}
+	{% for el in data.eventsInfo %}
+    	<div class="grid grid-item{{ i }}">
+			{# <img src="/image/__{{ el.title }}" name="firma"> #}
+			<img src="{{ el.logo }}" name="firma">
+			<h1 class="eventtitle">{{ el.title }}, {{ el.date }}, {{ el.city }}, {{ el.country }}</h1>
+			<p class="eventdescription">{{ el.description }}</p>
+			<form action="{{ el.website }}">
+				<button type="submit" class="view">View details</button>
+			</form>
+	    </div>
+	{% set i = i + 1 %}
+	{% endfor %}
+    {# <div class="grid grid-item{{ i }}"> {% set i = i+1 %}
+        <img src="/image/__codecamp" name="firma">
         <h1 class="eventtitle">Codecamp 6 Aprilie, Iasi, Romania</h1>
         <p class="eventdescription">Codecamp is the first nation-wide IT Conference in Romania, and most likely, the biggest one. 
-            In the 12 years since starting, Codecamp created an amazing community around them, bringing together companies, startups and IT professionals.
-        </p>
+            In the 12 years since starting, Codecamp created an amazing community around them, bringing together companies, startups and IT professionals.</p>
         <button type="submit" class="view">View details</button>
     </div>
 
-    <div class="grid grid-item2">
-            <img src="/resources/logoFirma/fiipractic.jpg" name="firma">
-            <h1 class="eventtitle">FII Practic</h1>
-            <p class="eventdescription">Cele 4 săptămâni de traininguri de la Iaşi se vor desfășura în weekend-urile din perioada 9 martie 2019 – 31 martie 2019 în incinta Facultăţii de Informatică (Corpul C al Universitaţii „Alexandru Ioan Cuza”)</p>
-            <button type="submit" class="view">View details</button>
+    <div class="grid grid-item{{ i }}">
+        <img src="/resources/logoFirma/fiipractic.jpg" name="firma">
+        <h1 class="eventtitle">FII Practic</h1>
+        <p class="eventdescription">Cele 4 săptămâni de traininguri de la Iaşi se vor desfășura în weekend-urile din perioada 9 martie 2019 – 31 martie 2019 în incinta Facultăţii de Informatică (Corpul C al Universitaţii „Alexandru Ioan Cuza”)</p>
+        <button type="submit" class="view">View details</button>
     </div>
 
-    <div class="grid grid-item3"><img src="/resources/logoFirma/centric.png" name="firma">
+    <div class="grid grid-item{{ i }}">
+        <img src="/resources/logoFirma/centric.png" name="firma">
         <h1 class="eventtitle">UI/UX & Frontend @Centric March 23, Iasi, Romania</h1>
         <p class="eventdescription"> This training is made for students that are interested in design and don’t have any prior knowledge. 
             It is the best place to get a guided introduction into the world of digital design, find out what the basic principles of design are, and how you can apply them. 
-            You’ll also get to see how we apply design in Centric and what does it mean to be a designer in a big company.
-        </p>
+            You’ll also get to see how we apply design in Centric and what does it mean to be a designer in a big company.</p>
         <button type="submit" class="view">View details</button>
     </div>
 
-    <div class="grid grid-item4"><img src="/resources/logoFirma/mi.png" name="firma">
+    <div class="grid grid-item{{ i }}">
+        <img src="/resources/logoFirma/mi.png" name="firma">
         <h1 class="eventtitle">Microsoft Ignite, November 4-8, Orlando, Florida </h1>
         <p class="eventdescription">Microsoft Ignite is Microsoft’s annual meeting designed for enterprise professionals, services, and products. 
             Microsoft Ignite offers over 700 different sessions that cover topics like deployment, development, architecture, implementation & migration, security, access management & compliance, usage & adoption, and operations & management. 
@@ -111,7 +121,8 @@
         <button type="submit" class="view">View details</button>
     </div>
 
-    <div class="grid grid-item5"><img src="/resources/logoFirma/ITarena.png" name="firma">
+    <div class="grid grid-item{{ i+1 }}">
+        <img src="/resources/logoFirma/ITarena.png" name="firma">
         <h1 class="eventtitle">IT Arena, September 27-29, Lviv, Ukraine </h1>
         <p class="eventdescription">IT Arena is the largest tech event in Ukraine and Eastern Europe. 
             The three-day conference, conducted exclusively in English, brings together more than 2,000 entrepreneurs, investors, developers, business analysts, and designers every year. 
@@ -121,14 +132,14 @@
         <button type="submit" class="view">View details</button>
     </div>
     
-    <div class="grid grid-item6"><img src="/resources/logoFirma/ws.jpg" name="firma">
+    <div class="grid grid-item{{ i+1 }}">
+        <img src="/resources/logoFirma/ws.jpg" name="firma">
         <h1 class="eventtitle">World Summit AI, October 9-10, Amsterdam, Netherlands</h1>
         <p class="eventdescription">The World Summit Artificial Intelligence (AI) is a unique platform for all AI innovations and projects.
                 World Summit AI is the result of a collaboration between the global City.Ai Network and 100+ international AI events, and it provides unique networking and discussion opportunities for the 2,000 attendees. 
-                This two-day conference brings together the three main pieces of the AI system: Enterprise, Startups & Investors, and Deep Tech. 
-        </p>
+                This two-day conference brings together the three main pieces of the AI system: Enterprise, Startups & Investors, and Deep Tech. </p>
         <button type="submit" class="view">View details</button>
-    </div> 
+    </div> #}
 </div>
 
 <div>

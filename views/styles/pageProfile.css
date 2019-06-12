@@ -38,7 +38,7 @@
     width: 100%;
     height: auto;
     min-height: 100% !important;
-    background-image: url(../resources/background/space3.png);
+    background-image: url(/resources/background/space3.png);
     background-repeat: no-repeat;
     overflow: hidden;
 }
@@ -66,6 +66,7 @@
     margin-top:10px; */
     margin: 0 auto;
     display: block;
+    cursor: pointer;
 }
 .bio > p {
     text-align: center;

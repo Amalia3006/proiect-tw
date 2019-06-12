@@ -6,6 +6,16 @@
 {% block content %}
 <link rel="stylesheet" href="/styles/pageProfile.css">
 
+<script>
+function uploadFileToServer() {
+    document.getElementById("profileImgForm").submit();
+}
+
+function openFileBrowser(){
+    document.getElementById("profileImgFileInput").click();
+}
+</script>
+
 <div class="sub-header">Develop your career with us</div>
 <div class="scrollbar">
     <div class="force-overflow"></div>
@@ -14,14 +24,9 @@
 <div class="container">
     <div class="bio">
         <h1>{{ data.fname }} {{data.lname}}</h1>
-        {# todo: find a way to send profile pic #}
-        {# <img src="/resources/user/user.png" class="user"> #}
-        <img src="/image/{{ data.username }}" class="user">
-        {# <img src="/resources/user/user.png" class="user"> #}
-        <form method="POST" enctype="multipart/form-data" action="/image/{{ data.username }}" nume="pics" > 
-         <input type="file" name="profileImg" id="profileImg" accept ="image/*">
-        <label for="profieImg"></label>
-        <button type="Submit">Submit</button>
+        <img src="/image/{{ data.username }}" onclick="openFileBrowser()" class="user">
+        <form id="profileImgForm" method="POST" enctype="multipart/form-data" action="/image/{{ data.username }}" nume="pics" > 
+            <input style="display: none;" type="file" name="profileImg" id="profileImgFileInput" accept ="image/*" onchange="uploadFileToServer()">
         </form>
         <p>{{ data.profession }} @ {{ data.company }}</p> 
         <p>{{ data.bio }}</p>
