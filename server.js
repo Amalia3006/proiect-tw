@@ -1,5 +1,5 @@
 /*todo:
-    1. mysql
+    1. databse
     2. templateuri
     3. routes: 
         3.1 resources("text/css", "image/webp", js scripts)
@@ -11,25 +11,25 @@
     6. recomandari
     7. evolutia utilizatorului
     8. editat profil
-    9. header: tabul curent colorat cu negru
-    10. pagina forgot password
+    9. pagina forgot password
 */
 const http = require("http");
 const mongoose = require("mongoose");
 
 const handleRequest = require("./requestHandler");
+const uploadToDb = require("./uploadToDB__debugging__"); // debug! delete me! //read file for more info
+const webScrapper = require("./scrappers/webScrapper");
 
-mongoose.connect(
-    "mongodb://localhost:27017/teask",
-    { useNewUrlParser: true, useCreateIndex: true },
-    err => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log("MongoDB connected");
-    }
-);
+webScrapper.start();
+
+mongoose.connect("mongodb://localhost:27017/teask", { useNewUrlParser: true, useCreateIndex: true }, err => {
+	if (err) {
+		console.log(err);
+		return;
+	}
+	console.log("MongoDB connected");
+	uploadToDb.doYourThing(); // debug! delete me!
+});
 
 const port = 3000;
 http.createServer(handleRequest).listen(port);

@@ -19,69 +19,71 @@ const { Schema, model } = require("mongoose");
 //   }
 
 const userSchema = new Schema({
-    fname: {
-        type: String,
-        required: true
-    },
-    lname: {
-        type: String,
-        required: true
-    },
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    country: {
-        type: String
-    },
-    city: {
-        type: String
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    tel: {
-        type: String,
-        required: true
-    },
-    gender: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    bio: {
-        type: String
-    },
-    profession: {
-        type: String
-    },
-    company: {
-        type: String
-    },
-    jobRole: {
-        type: String
-    },
-    interests: {
-        type: Array
-    },
-    languages: {
-        type: Array
-    },
-    linkedin: {
-        type: String
-    },
-    github: {
-        type: String
-    },
-    registeredOn: {
-        type: Date,
-        default: Date.now()
-    }
+	fname: {
+		type: String,
+		required: true
+	},
+	lname: {
+		type: String,
+		required: true
+	},
+	username: {
+		type: String,
+		required: true,
+		unique: true
+	},
+	country: {
+		type: String
+	},
+	city: {
+		type: String
+	},
+	email: {
+		type: String,
+		required: true
+	},
+	tel: {
+		type: String,
+		required: true
+	},
+	gender: {
+		type: String
+	},
+	password: {
+		type: String,
+		required: true
+	},
+	bio: {
+		type: String
+	},
+	profession: {
+		type: String
+	},
+	company: {
+		type: String
+	},
+	jobRole: {
+		type: String
+	},
+	interests: {
+		type: Array
+	},
+	languages: {
+		type: Array
+	},
+	linkedin: {
+		type: String
+	},
+	github: {
+		type: String
+	},
+	registeredOn: {
+		type: Date,
+		default: Date.now()
+	},
+	githubLanguages: {
+		type: JSON
+	}
 });
 
 const user = model("user", userSchema);
