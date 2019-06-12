@@ -485,7 +485,7 @@ class routesHandler {
 							return;
 						}
 
-						eventsInfo.splice(6);
+						eventsInfo.splice(33);
 						sendView(200, response, viewName, {
 							username: userDataFromJWT.user.username,
 							eventsInfo: eventsInfo
