@@ -16,6 +16,7 @@
 const http = require("http");
 const mongoose = require("mongoose");
 
+
 const handleRequest = require("./requestHandler");
 const uploadToDb = require("./uploadToDB__debugging__"); // debug! delete me! //read file for more info
 const webScrapper = require("./scrappers/webScrapper");
@@ -28,7 +29,7 @@ mongoose.connect("mongodb://localhost:27017/teask", { useNewUrlParser: true, use
 		return;
 	}
 	console.log("MongoDB connected");
-	uploadToDb.doYourThing(); // debug! delete me!
+	// uploadToDb.doYourThing(); // debug! delete me!
 });
 
 const port = 3000;

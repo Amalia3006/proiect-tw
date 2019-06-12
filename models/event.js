@@ -5,32 +5,37 @@ const eventSchema = new Schema({
 		type: String,
 		required: true
 	},
-	type: {
-		type: String
-	},
-	expRequired: {
-		type: String
-	},
-	country: {
-		type: String
-	},
-	city: {
+
+	// type: {
+	// 	type: String
+	// },
+	// expRequired: {
+	// 	type: String
+	// },
+	// country: {
+	// 	type: String
+	// },
+	// city: {
+	// 	type: String
+	// },
+	location:{
 		type: String
 	},
 	tags: {
 		type: Array
 	},
 	date: {
-		type: Date
-		// type: String
+		//type: Date
+		 type: String
 	},
 	description: {
 		type: String,
-		required: true
+		//required: true
 	},
 	website: {
 		type: String,
-		required: true
+		//required: true
+
 	},
 	logo: {
 		type: String

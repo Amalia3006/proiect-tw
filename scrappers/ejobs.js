@@ -65,6 +65,7 @@ function run() {
 								jobInfo.logo = jobLogo;
 								jobInfo.website = jobLink;
 								jobInfo.date = Date.now();
+								//tags
 							} else {
 								jobInfo = new mydb.job({
 									title: jobTitle,
