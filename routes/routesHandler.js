@@ -12,8 +12,8 @@ const mydb = require("../models/allModels");
 const debug = require("../debug");
 
 const accesTokenTimeLimit = {
-    value: 1,
-    unit: "d"
+	value: 1,
+	unit: "d"
 };
 // const accesTokenTimeLimit = {
 //     // debug! delete me!
@@ -41,16 +41,16 @@ const userDBtest = {
 const jwtSecret = "abcdefghijklmnopqrstuvwxyz";
 
 function getUidFromPath(url, pos = 1) {
-    const parts = String(url)
-        .split("/")
-        .filter(el => {
-            return el.length > 0;
-        });
-    if (parts.length >= 2) {
-        return parts[pos];
-    } else {
-        return null;
-    }
+	const parts = String(url)
+		.split("/")
+		.filter(el => {
+			return el.length > 0;
+		});
+	if (parts.length >= 2) {
+		return parts[pos];
+	} else {
+		return null;
+	}
 }
 
 function getTokenFromCookies(cookies) {
@@ -70,29 +70,29 @@ function getTokenFromCookies(cookies) {
 }
 
 class routesHandler {
-    static homeDisconnected(request, response) {
-        const viewName = "firstPageNoLog";
-        if (request.method == "GET") {
+	static homeDisconnected(request, response) {
+		const viewName = "firstPageNoLog";
+		if (request.method == "GET") {
 			// sendView(200, response, viewName);
-			mydb.job.find({}, (err, jobsInfo)=>{
-				if(err){
+			mydb.job.find({}, (err, jobsInfo) => {
+				if (err) {
 					console.log(err);
 					send(500, response);
 					return;
 				}
-				if(!jobsInfo){
+				if (!jobsInfo) {
 					console.log("No job found");
 					send(404, response);
 					return;
 				}
 				jobsInfo.splice(6);
-				mydb.event.find({},(err, eventsInfo)=>{
-					if(err){
+				mydb.event.find({}, (err, eventsInfo) => {
+					if (err) {
 						console.log(err);
 						send(500, response);
 						return;
 					}
-					if(!eventsInfo){
+					if (!eventsInfo) {
 						console.log("no events found");
 						send(404, response);
 						return;
@@ -101,70 +101,70 @@ class routesHandler {
 					sendView(200, response, viewName, {
 						eventsInfo: eventsInfo,
 						jobsInfo: jobsInfo
-					})
-				})	
-		})
-        } else {
-            send(405, response);
+					});
+				});
+			});
+		} else {
+			send(405, response);
 		}
-    }
+	}
 
-    static homeLoggedin(request, response) {
-        const viewName = "firstPageLoggedin";
-        if (request.method == "GET") {
-            const uid = getUidFromPath(request.url);
-            if (uid == null) {
-                send(404, response);
-                return;
-            }
-            const token = getTokenFromCookies(request.headers.cookie);
-            if (token == null) {
-                //todo: redirect to /login/
-                send(403, response);
-                return;
-            }
-            mydb.user.findOne({ username: uid }, (err, userInfo) => {
-                if (err) {
-                    send(500, response);
-                    return;
-                }
+	static homeLoggedin(request, response) {
+		const viewName = "firstPageLoggedin";
+		if (request.method == "GET") {
+			const uid = getUidFromPath(request.url);
+			if (uid == null) {
+				send(404, response);
+				return;
+			}
+			const token = getTokenFromCookies(request.headers.cookie);
+			if (token == null) {
+				//todo: redirect to /login/
+				send(403, response);
+				return;
+			}
+			mydb.user.findOne({ username: uid }, (err, userInfo) => {
+				if (err) {
+					send(500, response);
+					return;
+				}
 
-                if (!userInfo) {
-                    send(404, response);
-                    return;
-                }
+				if (!userInfo) {
+					send(404, response);
+					return;
+				}
 
-                jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
-                    if (err) {
-                        console.log(err);
-                        response.writeHead(302, {
-                            Location: "/login"
-                        }); // 302 Moved Temporarily
-                        response.end();
-                        return;
-                    }
+				jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
+					if (err) {
+						console.log(err);
+						response.writeHead(302, {
+							Location: "/login"
+						}); // 302 Moved Temporarily
+						response.end();
+						return;
+					}
 
-                    console.log(userDataFromJWT);
+					console.log(userDataFromJWT);
 
-					mydb.job.find({}, (err, jobsInfo)=>{
-						if(err){
+					mydb.job.find({}, (err, jobsInfo) => {
+						if (err) {
 							console.log(err);
 							send(500, response);
 							return;
 						}
-						if(!jobsInfo){
+						if (!jobsInfo) {
 							console.log("No job found");
 							send(404, response);
 							return;
 						}
 						jobsInfo.splice(6);
-						mydb.event.find({},(err, eventsInfo)=>{
-							if(err){
+						mydb.event.find({}, (err, eventsInfo) => {
+							if (err) {
 								console.log(err);
 								send(500, response);
 								return;
 							}
-							if(!eventsInfo){
+							if (!eventsInfo) {
 								console.log("no events found");
 								send(404, response);
 								return;
@@ -174,318 +174,315 @@ class routesHandler {
 								username: userDataFromJWT.user.username,
 								eventsInfo: eventsInfo,
 								jobsInfo: jobsInfo
-							})
-						})	
-				})
+							});
+						});
+					});
+				});
+			});
+		} else {
+			send(405, response);
+		}
+	}
 
-					
-                });
-            });
-        } else {
-            send(405, response);
-        }
-    }
+	static login(request, response) {
+		const viewName = "pageSignIn";
+		if (request.method == "GET") {
+			sendView(200, response, viewName);
+		} else if (request.method == "POST") {
+			debug.logToFile(request);
 
-    static login(request, response) {
-        const viewName = "pageSignIn";
-        if (request.method == "GET") {
-            sendView(200, response, viewName);
-        } else if (request.method == "POST") {
-            debug.logToFile(request);
+			const contentType = String(request.headers["content-type"]);
+			if (
+				contentType.indexOf("application/json") == -1 &&
+				contentType.indexOf("application/x-www-form-urlencoded") == -1
+			) {
+				console.log("Reject contentType: " + contentType);
+				send(415, response);
+				return;
+			}
 
-            const contentType = String(request.headers["content-type"]);
-            if (
-                contentType.indexOf("application/json") == -1 &&
-                contentType.indexOf("application/x-www-form-urlencoded") == -1
-            ) {
-                console.log("Reject contentType: " + contentType);
-                send(415, response);
-                return;
-            }
+			let body = [];
+			request.on("data", chunk => {
+				// console.log("ch: " + chunk);
+				body.push(chunk);
+			});
+			request.on("end", () => {
+				body = body.join();
+				if (contentType.indexOf("application/x-www-form-urlencoded") != -1) {
+					body = parse(body);
+				}
+				// console.log(body);
+				mydb.user.findOne({ username: body.user_name }, (err, userInfo) => {
+					if (err) {
+						body.error = "Server database error";
+						sendView(500, response, viewName, body);
+						return;
+					}
+					if (!userInfo) {
+						body.error = "Wrong username";
+						sendView(404, response, viewName, body);
+						return;
+					}
+					// console.log(userInfo);
+					bcrypt.compare(body.user_password, userInfo.password, (err, res) => {
+						if (err) {
+							body.error = "Server database error";
+							sendView(500, response, viewName, body);
+							return;
+						}
+						// console.log(res);
+						if (!res) {
+							body.error = "Wrong password";
+							sendView(400, response, viewName, body);
+							return;
+						}
 
-            let body = [];
-            request.on("data", chunk => {
-                // console.log("ch: " + chunk);
-                body.push(chunk);
-            });
-            request.on("end", () => {
-                body = body.join();
-                if (contentType.indexOf("application/x-www-form-urlencoded") != -1) {
-                    body = parse(body);
-                }
-                // console.log(body);
-                mydb.user.findOne({ username: body.user_name }, (err, userInfo) => {
-                    if (err) {
-                        body.error = "Server database error";
-                        sendView(500, response, viewName, body);
-                        return;
-                    }
-                    if (!userInfo) {
-                        body.error = "Wrong username";
-                        sendView(404, response, viewName, body);
-                        return;
-                    }
-                    // console.log(userInfo);
-                    bcrypt.compare(body.user_password, userInfo.password, (err, res) => {
-                        if (err) {
-                            body.error = "Server database error";
-                            sendView(500, response, viewName, body);
-                            return;
-                        }
-                        // console.log(res);
-                        if (!res) {
-                            body.error = "Wrong password";
-                            sendView(400, response, viewName, body);
-                            return;
-                        }
+						jwt.sign(
+							{ user: userInfo },
+							jwtSecret + userInfo.password,
+							{
+								expiresIn: accesTokenTimeLimit.value + accesTokenTimeLimit.unit
+							},
+							(err, token) => {
+								if (err) {
+									console.log(err);
+									send(500, response);
+									return;
+								}
+								// console.log("token:" + token);
+								// response.writeHead(302, {
+								//     Location: "/home/" + body.user_name
+								// }); // 302 Moved Temporarily
+								// response.end();
+								const cookieExpDate = moment()
+									.add(accesTokenTimeLimit.value, accesTokenTimeLimit.unit)
+									.toDate()
+									.toUTCString();
+								// console.log("token expDate: " + cookieExpDate);
+								response.writeHead(302, {
+									Location: "/home/" + body.user_name,
+									"Set-Cookie":
+										"token=" + token + "; path=/; expires=" + cookieExpDate + "; HttpOnly;"
+								}); // 302 Moved Temporarily
+								response.end();
+							}
+						);
+					});
+				});
+			});
+		} else {
+			send(405, response);
+		}
+	}
 
-                        jwt.sign(
-                            { user: userInfo },
-                            jwtSecret + userInfo.password,
-                            {
-                                expiresIn: accesTokenTimeLimit.value + accesTokenTimeLimit.unit
-                            },
-                            (err, token) => {
-                                if (err) {
-                                    console.log(err);
-                                    send(500, response);
-                                    return;
-                                }
-                                // console.log("token:" + token);
-                                // response.writeHead(302, {
-                                //     Location: "/home/" + body.user_name
-                                // }); // 302 Moved Temporarily
-                                // response.end();
-                                const cookieExpDate = moment()
-                                    .add(accesTokenTimeLimit.value, accesTokenTimeLimit.unit)
-                                    .toDate()
-                                    .toUTCString();
-                                // console.log("token expDate: " + cookieExpDate);
-                                response.writeHead(302, {
-                                    Location: "/home/" + body.user_name,
-                                    "Set-Cookie":
-                                        "token=" + token + "; path=/; expires=" + cookieExpDate + "; HttpOnly;"
-                                }); // 302 Moved Temporarily
-                                response.end();
-                            }
-                        );
-                    });
-                });
-            });
-        } else {
-            send(405, response);
-        }
-    }
+	static register(request, response) {
+		// todo: check password min length
+		// other checks
+		const viewName = "pageSignUp";
+		if (request.method == "GET") {
+			sendView(200, response, viewName);
+		} else if (request.method == "POST") {
+			let body = [];
+			request.on("data", chunk => {
+				// console.log("ch: " + chunk);
+				body.push(chunk);
+			});
+			request.on("end", () => {
+				body = body.join();
+				// console.log(body);
+				body = parse(body);
+				// console.log(body);
+				// body is ready
 
-    static register(request, response) {
-        // todo: check password min length
-        // other checks
-        const viewName = "pageSignUp";
-        if (request.method == "GET") {
-            sendView(200, response, viewName);
-        } else if (request.method == "POST") {
-            let body = [];
-            request.on("data", chunk => {
-                // console.log("ch: " + chunk);
-                body.push(chunk);
-            });
-            request.on("end", () => {
-                body = body.join();
-                // console.log(body);
-                body = parse(body);
-                // console.log(body);
-                // body is ready
+				// check if passwords match
+				if (body.user_password[0] != body.user_password[1]) {
+					// passwords dont match
+					body.error = "Passwords don't match";
+					sendView(400, response, viewName, body);
+					return;
+				}
 
-                // check if passwords match
-                if (body.user_password[0] != body.user_password[1]) {
-                    // passwords dont match
-                    body.error = "Passwords don't match";
-                    sendView(400, response, viewName, body);
-                    return;
-                }
+				// checking if username already exists
+				mydb.user.findOne({ username: body.user_name[2] }, (err, result) => {
+					if (err) {
+						console.log(err);
+						body.error = "Server database error";
+						sendView(500, response, viewName, body);
+						return;
+					}
 
-                // checking if username already exists
-                mydb.user.findOne({ username: body.user_name[2] }, (err, result) => {
-                    if (err) {
-                        console.log(err);
-                        body.error = "Server database error";
-                        sendView(500, response, viewName, body);
-                        return;
-                    }
+					if (result) {
+						// username already exists
+						body.error = "Username already exists";
+						sendView(400, response, viewName, body);
+						return;
+					}
+					bcrypt.hash(body.user_password[0], 10, (err, hashedPassword) => {
+						if (err) {
+							console.log(err);
+							body.error = "Server database error";
+							sendView(500, response, viewName, body);
+							return;
+						}
 
-                    if (result) {
-                        // username already exists
-                        body.error = "Username already exists";
-                        sendView(400, response, viewName, body);
-                        return;
-                    }
-                    bcrypt.hash(body.user_password[0], 10, (err, hashedPassword) => {
-                        if (err) {
-                            console.log(err);
-                            body.error = "Server database error";
-                            sendView(500, response, viewName, body);
-                            return;
-                        }
+						const newUser = new mydb.user({
+							fname: body.user_name[0],
+							lname: body.user_name[1],
+							username: body.user_name[2],
+							country: body.user_country,
+							city: body.user_city,
+							email: body.user_email,
+							tel: body.user_tel,
+							gender: body.user_gender,
+							password: hashedPassword,
+							bio: body.user_bio,
+							profession: body.user_profession,
+							company: body.user_company,
+							jobRole: body.user_job_role,
+							interests: body.user_interest,
+							languages: body.language,
+							linkedin: body.linkedin_user_url,
+							github: body.github_user_url
+						});
 
-                        const newUser = new mydb.user({
-                            fname: body.user_name[0],
-                            lname: body.user_name[1],
-                            username: body.user_name[2],
-                            country: body.user_country,
-                            city: body.user_city,
-                            email: body.user_email,
-                            tel: body.user_tel,
-                            gender: body.user_gender,
-                            password: hashedPassword,
-                            bio: body.user_bio,
-                            profession: body.user_profession,
-                            company: body.user_company,
-                            jobRole: body.user_job_role,
-                            interests: body.user_interest,
-                            languages: body.language,
-                            linkedin: body.linkedin_user_url,
-                            github: body.github_user_url
-                        });
+						// console.log(newUser);
 
-                        // console.log(newUser);
-
-                        newUser.save(err => {
-                            if (err) {
-                                console.log(err);
-                                body.error = "Server database error";
-                                sendView(500, response, viewName, body);
-                                return;
-                            }
+						newUser.save(err => {
+							if (err) {
+								console.log(err);
+								body.error = "Server database error";
+								sendView(500, response, viewName, body);
+								return;
+							}
 
 							console.log("User " + newUser.username + " saved to database");
 							const githubUsername = String(body.github_user_url).split()[3];
 							getInfoFromGitHub(githubUsername, body.user_name[2]);
 
+							response.writeHead(302, {
+								Location: "/login"
+							}); // 302 Moved Temporarily
+							response.end();
+						});
+					});
+				});
+			});
+		} else {
+			send(405, response);
+		}
+	}
 
-                            response.writeHead(302, {
-                                Location: "/login"
-                            }); // 302 Moved Temporarily
-                            response.end();
-                        });
-                    });
-                });
-            });
-        } else {
-            send(405, response);
-        }
-    }
+	static logout(request, response) {
+		if (request.method == "GET") {
+			response.writeHead(302, {
+				Location: "/",
+				"Set-Cookie": "token=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+			}); // 302 Moved Temporarily
+			response.end();
+		} else {
+			send(405, response);
+		}
+	}
 
-    static logout(request, response) {
-        if (request.method == "GET") {
-            response.writeHead(302, {
-                Location: "/",
-                "Set-Cookie": "token=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"
-            }); // 302 Moved Temporarily
-            response.end();
-        } else {
-            send(405, response);
-        }
-    }
+	static profile(request, response) {
+		const viewName = "pageProfile";
+		if (request.method == "GET") {
+			const uid = getUidFromPath(request.url);
+			if (uid == null) {
+				send(400, response);
+				return;
+			}
+			const token = getTokenFromCookies(request.headers.cookie);
+			if (token == null) {
+				//todo: redirect to /login/
+				send(403, response);
+				return;
+			}
+			mydb.user.findOne({ username: uid }, (err, userinfo) => {
+				if (err) {
+					send(500, response);
+					console.log(err);
+					return;
+				}
 
-    static profile(request, response) {
-        const viewName = "pageProfile";
-        if (request.method == "GET") {
-            const uid = getUidFromPath(request.url);
-            if (uid == null) {
-                send(400, response);
-                return;
-            }
-            const token = getTokenFromCookies(request.headers.cookie);
-            if (token == null) {
-                //todo: redirect to /login/
-                send(403, response);
-                return;
-            }
-            mydb.user.findOne({ username: uid }, (err, userinfo) => {
-                if (err) {
-                    send(500, response);
-                    console.log(err);
-                    return;
-                }
+				if (!userinfo) {
+					send(404, response);
+					// console.log("User invalid");
+					return;
+				}
 
-                if (!userinfo) {
-                    send(404, response);
-                    // console.log("User invalid");
-                    return;
-                }
-
-                jwt.verify(token, jwtSecret + userinfo.password, (err, userDataFromJWT) => {
-                    if (err) {
-                        console.log(err);
-                        response.writeHead(302, {
-                            Location: "/login"
-                        }); // 302 Moved Temporarily
-                        response.end();
-                        return;
-                    }
+				jwt.verify(token, jwtSecret + userinfo.password, (err, userDataFromJWT) => {
+					if (err) {
+						console.log(err);
+						response.writeHead(302, {
+							Location: "/login"
+						}); // 302 Moved Temporarily
+						response.end();
+						return;
+					}
 
 					let githubLanguages = [];
-					for(let key in userinfo.githubLanguages) {
-						githubLanguages.push({name:key, val: userinfo.githubLanguages[key]});
+					for (let key in userinfo.githubLanguages) {
+						githubLanguages.push({ name: key, val: userinfo.githubLanguages[key] });
 					}
-					githubLanguages.sort((a,b) => {
+					githubLanguages.sort((a, b) => {
 						return b.val - a.val;
-					})
+					});
 					githubLanguages.splice(3);
 					console.log(githubLanguages);
 					userinfo.githubLanguages = githubLanguages;
-                    sendView(200, response, viewName, userinfo);
-                });
-            });
-        } else {
-            send(405, response);
-        }
-    }
+					sendView(200, response, viewName, userinfo);
+				});
+			});
+		} else {
+			send(405, response);
+		}
+	}
 
-    static jobs(request, response) {
-        const viewName = "pageJobs";
-        if (request.method == "GET") {
-            const uid = getUidFromPath(request.url);
-            if (uid == null) {
-                //send general jobs page
-                mydb.event.find({}, (err, jobsInfo)=>{
-                    sendView(200, response, viewName,{
-                       jobsInfo: jobsInfo
-                   });
-               })
-                return;
-            }
-            const token = getTokenFromCookies(request.headers.cookie);
-            if (token == null) {
-                //todo: redirect to /login/
-                send(403, response);
-                return;
-            }
-            mydb.user.findOne({ username: uid }, (err, userInfo) => {
-                if (err) {
-                    send(500, response);
-                    return;
-                }
+	static jobs(request, response) {
+		const viewName = "pageJobs";
+		if (request.method == "GET") {
+			const uid = getUidFromPath(request.url);
+			if (uid == null) {
+				//send general jobs page
+				mydb.event.find({}, (err, jobsInfo) => {
+					sendView(200, response, viewName, {
+						jobsInfo: jobsInfo
+					});
+				});
+				return;
+			}
+			const token = getTokenFromCookies(request.headers.cookie);
+			if (token == null) {
+				//todo: redirect to /login/
+				send(403, response);
+				return;
+			}
+			mydb.user.findOne({ username: uid }, (err, userInfo) => {
+				if (err) {
+					send(500, response);
+					return;
+				}
 
-                if (!userInfo) {
-                    send(404, response);
-                    return;
-                }
+				if (!userInfo) {
+					send(404, response);
+					return;
+				}
 
-                jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
-                    if (err) {
-                        console.log(err);
-                        response.writeHead(302, {
-                            Location: "/login"
-                        }); // 302 Moved Temporarily
-                        response.end();
-                        return;
-                    }
+				jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
+					if (err) {
+						console.log(err);
+						response.writeHead(302, {
+							Location: "/login"
+						}); // 302 Moved Temporarily
+						response.end();
+						return;
+					}
 
-                    // console.log(userDataFromJWT);
+					// console.log(userDataFromJWT);
 
 					mydb.job.find({}, (err, jobsInfo) => {
-						if(err){
+						if (err) {
 							console.log(err);
 							send(500, response);
 							return;
@@ -496,112 +493,123 @@ class routesHandler {
 							return;
 						}
 						let githubLanguages = [];
-						for(let key in userInfo.githubLanguages) {
-							githubLanguages.push({name:key, val: userInfo.githubLanguages[key]});
+						for (let key in userInfo.githubLanguages) {
+							githubLanguages.push({ name: key, val: userInfo.githubLanguages[key] });
 						}
-						githubLanguages.sort((a,b) => {
+						githubLanguages.sort((a, b) => {
 							return b.val - a.val;
-						})
+						});
 						githubLanguages.splice(3);
 						// console.log(githubLanguages);
 						let recomendedJobs = [];
-						for(let job of jobsInfo) {
+						for (let job of jobsInfo) {
 							let skipJob = false;
 							const jobTitle = String(job.title).toLowerCase();
 							const jobDesc = String(job.description).toLowerCase();
 							const jobLocation = String(job.country).toLowerCase();
-							for(let interest of userInfo.interests) {
-								if(jobTitle.includes(String(interest).toLowerCase()) || jobDesc.includes(String(interest).toLowerCase())) {
+							for (let interest of userInfo.interests) {
+								if (
+									jobTitle.includes(String(interest).toLowerCase()) ||
+									jobDesc.includes(String(interest).toLowerCase())
+								) {
 									recomendedJobs.push(job);
 									skipJob = true;
 									break;
 								}
 							}
-							if(skipJob) continue;
+							if (skipJob) continue;
 
-							for(let language of userInfo.languages) {
-								if(jobTitle.includes(String(language).toLowerCase()) || jobDesc.includes(String(language).toLowerCase())) {
+							for (let language of userInfo.languages) {
+								if (
+									jobTitle.includes(String(language).toLowerCase()) ||
+									jobDesc.includes(String(language).toLowerCase())
+								) {
 									recomendedJobs.push(job);
 									skipJob = true;
 									break;
 								}
 							}
-							if(skipJob) continue;
+							if (skipJob) continue;
 
-							if(jobLocation.includes(String(userInfo.city).toLowerCase()) || jobLocation.includes(String(userInfo.country).toLowerCase())) {
+							if (
+								jobLocation.includes(String(userInfo.city).toLowerCase()) ||
+								jobLocation.includes(String(userInfo.country).toLowerCase())
+							) {
 								recomendedJobs.push(job);
 								skipJob = true;
 							}
-							if(skipJob) continue;
+							if (skipJob) continue;
 
-							for(let lang of githubLanguages) {
-								if(jobTitle.includes(String(lang.name).toLowerCase()) || jobDesc.includes(String(lang.name).toLowerCase())) {
+							for (let lang of githubLanguages) {
+								if (
+									jobTitle.includes(String(lang.name).toLowerCase()) ||
+									jobDesc.includes(String(lang.name).toLowerCase())
+								) {
 									recomendedJobs.push(job);
 									skipJob = true;
 									break;
 								}
 							}
-							if(skipJob) continue;
-
+							if (skipJob) continue;
 						}
 						// console.log(recomendedJobs.length);
 						sendView(200, response, viewName, {
 							username: userDataFromJWT.user.username,
 							jobsInfo: recomendedJobs
 						});
-					})
-                });
-            });
-        } else {
-            send(405, response);
-        }
-    }
+					});
+				});
+			});
+		} else {
+			send(405, response);
+		}
+	}
 
-    static events(request, response) {
-        const viewName = "pageOportunity";
-        if (request.method == "GET") {
-            const uid = getUidFromPath(request.url);
-            if (uid == null) {
-                //send general events page
-                mydb.event.find({}, (err, eventsInfo)=>{
-                     sendView(200, response, viewName,{
-                        eventsInfo: eventsInfo
-                    });
-                })
-               
-                return;
-            }
-            const token = getTokenFromCookies(request.headers.cookie);
-            if (token == null) {
-                //redirect to /login
-                response.writeHead(302, {
-                    Location: "/login"
-                }); // 302 Moved Temporarily
-                response.end();
-                return;
-            }
-            mydb.user.findOne({ username: uid }, (err, userInfo) => {
-                if (err) {
-                    send(500, response);
-                    return;
-                }
+	static events(request, response) {
+		const viewName = "pageOportunity";
+		if (request.method == "GET") {
+			const uid = getUidFromPath(request.url);
+			if (uid == null) {
+				//send general events page
+				mydb.event.find({}, (err, eventsInfo) => {
+					sendView(200, response, viewName, {
+						eventsInfo: eventsInfo
+					});
+				});
 
-                if (!userInfo) {
-                    send(404, response);
-                    return;
-                }
+				return;
+			}
+			const token = getTokenFromCookies(request.headers.cookie);
+			if (token == null) {
+				//redirect to /login
+				response.writeHead(302, {
+					Location: "/login"
+				}); // 302 Moved Temporarily
+				response.end();
+				return;
+			}
+			mydb.user.findOne({ username: uid }, (err, userInfo) => {
+				if (err) {
+					send(500, response);
+					return;
+				}
 
-                jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
-                    if (err) {
-                        console.log(err);
-                        response.writeHead(302, {
-                            Location: "/login"
-                        }); // 302 Moved Temporarily
-                        response.end();
-                        return;
-                    }
+				if (!userInfo) {
+					send(404, response);
+					return;
+				}
 
-                    // console.log(userDataFromJWT);
+				jwt.verify(token, jwtSecret + userInfo.password, (err, userDataFromJWT) => {
+					if (err) {
+						console.log(err);
+						response.writeHead(302, {
+							Location: "/login"
+						}); // 302 Moved Temporarily
+						response.end();
+						return;
+					}
+
+					// console.log(userDataFromJWT);
 
 					mydb.event.find({}, (err, eventsInfo) => {
 						if (err) {
@@ -609,7 +617,7 @@ class routesHandler {
 							send(500, response);
 							return;
 						}
-						if(!eventsInfo) {
+						if (!eventsInfo) {
 							console.log("No event found");
 							send(404, response);
 							return;
@@ -812,23 +820,95 @@ class routesHandler {
 	}
 
 	static search(request, response) {
-		if(request.method == "GET") {
+		if (request.method == "POST") {
+			const uid = getUidFromPath(request.url);
 			let body = [];
-            request.on("data", chunk => {
-                // console.log("ch: " + chunk);
-                body.push(chunk);
+			request.on("data", chunk => {
+				// console.log("ch: " + chunk);
+				body.push(chunk);
 			});
 			request.on("end", () => {
 				body = body.join();
 				body = parse(body);
-				console.log(body);
+				// console.log(body.Search);
+				body.Search = String(body.Search).toLowerCase();
 
-				send(404, response);
-			})
-			request.on("error", (err) => {
+				let jobs = [];
+				let events = [];
+				mydb.job.find({}, (err, jobsInfo) => {
+					if (err) {
+						console.log(err);
+						send(500, response);
+						return;
+					}
+
+					if (!jobsInfo) {
+						send(404, response);
+						return;
+					}
+
+					for (let job of jobsInfo) {
+						if (
+							String(job.title)
+								.toLowerCase()
+								.includes(body.Search) ||
+							String(job.description)
+								.toLowerCase()
+								.includes(body.Search) ||
+							String(job.type)
+								.toLowerCase()
+								.includes(body.Search)
+						) {
+							jobs.push(job);
+						}
+					}
+
+					mydb.event.find({}, (err, eventsInfo) => {
+						if (err) {
+							console.log(err);
+							send(500, response);
+							return;
+						}
+						if (!eventsInfo) {
+							send(404, response);
+							return;
+						}
+
+						for (let event of eventsInfo) {
+							if (
+								String(event.title)
+									.toLowerCase()
+									.includes(body.Search) ||
+								String(event.description)
+									.toLowerCase()
+									.includes(body.Search) ||
+								String(event.location)
+									.toLowerCase()
+									.includes(body.Search)
+							) {
+								events.push(event);
+							}
+						}
+
+						if (uid) {
+							sendView(200, response, "firstPageLoggedin", {
+								username: uid,
+								eventsInfo: events,
+								jobsInfo: jobs
+							});
+						} else {
+							sendView(200, response, "firstPageLoggedin", {
+								eventsInfo: events,
+								jobsInfo: jobs
+							});
+						}
+					});
+				});
+			});
+			request.on("error", err => {
 				console.log(err);
 				send(500, response);
-			})
+			});
 		} else {
 			send(405, response);
 		}

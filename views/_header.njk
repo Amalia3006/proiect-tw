@@ -41,7 +41,7 @@
                                 <span>
                                     <link rel="stylesheet"
                                         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <form class="searchform" action="">
+                                    <form class="searchform" action="/search/{{ username }}" method="post" name="formular">
                                         <input type="text" placeholder="Search.." name="Search">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </form>
@@ -76,7 +76,7 @@
                         <li><a href="#"><span>
                                     <link rel="stylesheet"
                                         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <form class="searchform" action="/search">
+                                    <form class="searchform" action="/search" method="post" name="formular">
                                         <input type="text" placeholder="Search.." name="Search">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </form>
