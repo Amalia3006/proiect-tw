@@ -50,32 +50,83 @@ function openFileBrowser(){
         <h1>Skills</h1>
         <br><br>
 
-        {# todo: procentele sunt hardcodate in css, de refacut animatia cu valori dinamice #}
-        <h2>HTML / CSS</h2>
+       {# todo: procentele sunt hardcodate in css, de refacut animatia cu valori dinamice #}
+        {# <h2>HTML / CSS</h2>
         <div class="line line1">50%</div>
         <h2>C/C++</h2>
         <div class="line line2">85%</div>
         <h2>Java</h2>
         <div class="line line3">70%</div>
         <h2>PHP</h2>
-        <div class="line line4">20%</div>
+        <div class="line line4">20%</div>  #}
 
-    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-    <div class= "exp">
-        <h1>Experience</h1>
-        {% for el in data.experience %}
-            <p class="position">{{ el[0] }}</p>
-            <p class="period">{{ el[1] }}</p>
-        {% endfor %}
-    </div>
 
-    <div class= "edu">
-        <h1>Education</h1>
-        {% for el in data.education %}
-            <p class="college">{{ el }}</p>
-        {% endfor %}
-    </div>
 
+        <canvas id="myChart" width=100px height=100px></canvas>
+<script>
+var myChart = document.getElementById('myChart').getContext('2d');
+myChart.canvas.width = 50;
+myChart.canvas.height = 50;
+Chart.defaults.global.defaultFontFamily = 'Lato';
+Chart.defaults.global.defaultFontSize = 18;
+Chart.defaults.global.defaultFontColor = '#000';
+
+var skillChart = new Chart(myChart, {
+type: 'bar',
+data:{
+    labels:['ceva','altceva','blabla'],
+    datasets:[{
+        label:'Language',
+        data:[
+            12,
+            13,
+            56
+        ],
+        backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)'
+        ],
+        borderWidth:1,
+        borderColor:'#777',
+        hoverBorderWidth:3,
+        hoverBorderColor: '#000'
+
+    }]
+},
+options:{
+    title:{
+        display:true,
+        text:'Your first 3 programming languages based on the number of code lines',
+        fontSize:25
+    },
+    legend:{
+        display:false,
+        position:'right',
+        labels:{
+            fontColor:'#000'
+        }
+    },
+    layout:{
+        padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+        }
+    },
+    tooltips:{
+        enabled:true
+    }
+}
+
+});
+</script>
+</div>
+
+
+   
 </div>
 {% endblock content %}

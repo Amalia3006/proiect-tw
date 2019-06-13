@@ -37,59 +37,58 @@ const routesHandler = require("./routesHandler");
 const apiRoutesHandler = require("./apiRoutesHandler");
 
 const routesMapping = [
-	[/^\/*$/i, routesHandler.homeDisconnected],
-	[/^\/home\/[A-Za-z0-9]+\/*$/i, routesHandler.homeLoggedin],
-	// [/^\/home\/[A-Za-z0-9]+\/?$/i, routesHandler.homeDisconnected], // debug! delete me!
-	[/^\/login\/*$/i, routesHandler.login],
-	[/^\/signin\/*$/i, routesHandler.login],
-	[/^\/register\/*$/i, routesHandler.register],
-	[/^\/signup\/*$/i, routesHandler.register],
-	[/^\/logout\/*$/i, routesHandler.logout],
-	[/^\/signout\/*$/i, routesHandler.logout],
-	[/^\/profile\/[A-Za-z0-9]+\/*$/i, routesHandler.profile],
-	[/^\/jobs(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.jobs],
-	[/^\/events(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.events],
-	[/^\/image\/[A-Za-z0-9]+\/*$/i, routesHandler.image],
-	[/^\/image\/__[A-Za-z0-9%&@\-]+\/*$/i, routesHandler.imageResource]
+  [/^\/*$/i, routesHandler.homeDisconnected],
+  [/^\/home\/[A-Za-z0-9]+\/*$/i, routesHandler.homeLoggedin],
+  // [/^\/home\/[A-Za-z0-9]+\/?$/i, routesHandler.homeDisconnected], // debug! delete me!
+  [/^\/login\/*$/i, routesHandler.login],
+  [/^\/signin\/*$/i, routesHandler.login],
+  [/^\/register\/*$/i, routesHandler.register],
+  [/^\/signup\/*$/i, routesHandler.register],
+  [/^\/logout\/*$/i, routesHandler.logout],
+  [/^\/signout\/*$/i, routesHandler.logout],
+  [/^\/profile\/[A-Za-z0-9]+\/*$/i, routesHandler.profile],
+  [/^\/jobs(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.jobs],
+  [/^\/events(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.events],
+  [/^\/image\/[A-Za-z0-9]+\/*$/i, routesHandler.image],
+  [/^\/image\/__[A-Za-z0-9%&@\-]+\/*$/i, routesHandler.imageResource]
 ];
 
 function routes(request, response) {
-	const path = urlParse(request.url).pathname;
-	console.log("routes: " + request.method + " " + path);
+  const path = urlParse(request.url).pathname;
+  console.log("routes: " + request.method + " " + path);
 
-	for (item of routesMapping) {
-		// console.log("regex match: " + path + " @ " + item[0] + " => " + path.match(item[0]));
-		if (path.match(item[0])) {
-			item[1](request, response);
-			return;
-		}
-	}
+  for (item of routesMapping) {
+    // console.log("regex match: " + path + " @ " + item[0] + " => " + path.match(item[0]));
+    if (path.match(item[0])) {
+      item[1](request, response);
+      return;
+    }
+  }
 
-	send(404, response);
+  send(404, response);
 }
 
 const apiRoutesMapping = [
-	[/^\/api\/login\/?$/i, apiRoutesHandler.login],
-	[/^\/api\/register\/?$/i, apiRoutesHandler.register],
-	[/^\/api\/logout\/?$/i, apiRoutesHandler.logout],
-	[/^\/api\/profile\/?$/i, apiRoutesHandler.profile],
-	[/^\/api\/jobs(\/[A-Za-z0-9]+)?\/*$/i, apiRoutesHandler.jobs],
-	[/^\/api\/events(\/[A-Za-z0-9]+)?\/*$/i, apiRoutesHandler.events]
+  [/^\/api\/login\/?$/i, apiRoutesHandler.login],
+  [/^\/api\/register\/?$/i, apiRoutesHandler.register],
+  [/^\/api\/profile\/?$/i, apiRoutesHandler.profile],
+  [/^\/api\/jobs\/?$/i, apiRoutesHandler.jobs],
+  [/^\/api\/events\/?$/i, apiRoutesHandler.events]
 ];
 
 function apiRoutes(request, response) {
-	const path = urlParse(request.url).pathname;
-	console.log("apiRoutes: " + request.method + " " + path);
+  const path = urlParse(request.url).pathname;
+  console.log("apiRoutes: " + request.method + " " + path);
 
-	for (item of apiRoutesMapping) {
-		// console.log("regex match: " + path + " @ " + item[0] + " => " + path.match(item[0]));
-		if (path.match(item[0])) {
-			item[1](request, response);
-			return;
-		}
-	}
+  for (item of apiRoutesMapping) {
+    // console.log("regex match: " + path + " @ " + item[0] + " => " + path.match(item[0]));
+    if (path.match(item[0])) {
+      item[1](request, response);
+      return;
+    }
+  }
 
-	send(404, response);
+  send(404, response);
 }
 
 module.exports = { routes, apiRoutes };

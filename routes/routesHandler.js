@@ -375,7 +375,11 @@ class routesHandler {
             const uid = getUidFromPath(request.url);
             if (uid == null) {
                 //send general jobs page
-                sendView(200, response, viewName);
+                mydb.event.find({}, (err, jobsInfo)=>{
+                    sendView(200, response, viewName,{
+                       jobsInfo: jobsInfo
+                   });
+               })
                 return;
             }
             const token = getTokenFromCookies(request.headers.cookie);
@@ -419,7 +423,7 @@ class routesHandler {
 							return;
 						}
 
-						jobsInfo.splice(6);
+						jobsInfo.splice(33);
 						sendView(200, response, viewName, {
 							username: userDataFromJWT.user.username,
 							jobsInfo: jobsInfo
@@ -438,7 +442,12 @@ class routesHandler {
             const uid = getUidFromPath(request.url);
             if (uid == null) {
                 //send general events page
-                sendView(200, response, viewName);
+                mydb.event.find({}, (err, eventsInfo)=>{
+                     sendView(200, response, viewName,{
+                        eventsInfo: eventsInfo
+                    });
+                })
+               
                 return;
             }
             const token = getTokenFromCookies(request.headers.cookie);
