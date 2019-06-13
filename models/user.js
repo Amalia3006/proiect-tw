@@ -80,6 +80,9 @@ const userSchema = new Schema({
 	registeredOn: {
 		type: Date,
 		default: Date.now()
+	},
+	githubLanguages: {
+		type: JSON
 	}
 });
 

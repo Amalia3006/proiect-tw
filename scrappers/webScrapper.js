@@ -1,4 +1,7 @@
-const scrapperModules = [require("./bestjobs"), require("./ejobs"), require("./meetup")];
+const scrapperModules = [require("./bestjobs"), 
+require("./ejobs"), 
+require("./meetup")
+];
 
 function start() {
 	// const interval = 1000 * 60 * 60 * 1;
@@ -12,7 +15,7 @@ function start() {
 
 	//debug! delete me!
 	scrapperModules.forEach(el => {
-		el.run();
+		// el.run();
 	});
 }
 

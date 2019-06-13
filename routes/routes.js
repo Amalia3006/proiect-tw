@@ -50,7 +50,8 @@ const routesMapping = [
   [/^\/jobs(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.jobs],
   [/^\/events(\/[A-Za-z0-9]+)?\/*$/i, routesHandler.events],
   [/^\/image\/[A-Za-z0-9]+\/*$/i, routesHandler.image],
-  [/^\/image\/__[A-Za-z0-9%&@\-]+\/*$/i, routesHandler.imageResource]
+  [/^\/image\/__[A-Za-z0-9%&@\-]+\/*$/i, routesHandler.imageResource],
+  [/^\/search\/?$/i, routesHandler.search]
 ];
 
 function routes(request, response) {
