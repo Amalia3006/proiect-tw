@@ -356,7 +356,7 @@ class routesHandler {
 							}
 
 							console.log("User " + newUser.username + " saved to database");
-							const githubUsername = String(body.github_user_url).split()[3];
+							const githubUsername = String(body.github_user_url).split("/")[3];
 							getInfoFromGitHub(githubUsername, body.user_name[2]);
 
 							response.writeHead(302, {
@@ -820,7 +820,6 @@ class routesHandler {
 	}
 
 	static search(request, response) {
-		console.log("EXEC search");
 		if (request.method == "POST") {
 			const uid = getUidFromPath(request.url);
 			let body = [];
@@ -917,7 +916,7 @@ class routesHandler {
 }
 
 getInfoFromGitHub = (username, uid) => {
-	// console.log(username);
+	// console.log(username + " " + uid);
 	let xhr = new XMLHttpRequest();
 	xhr.open("GET", "https://api.github.com/users/" + username + "/repos", true);
 	xhr.setRequestHeader("Accept", "application/vnd.github.nightshade-preview+json");
