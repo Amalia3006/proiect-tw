@@ -12,16 +12,15 @@
 
                     	{# <li class="dropdown">test</li> #}
 
-                        <div class="dropdown">
+                        {# <div class="dropdown"> #}
                             <li><a href="/profile/{{ username }}"><span>Personal Profile</span></a>
-                                <div class="dropdown-content">
+                                {# <div class="dropdown-content">
                                     <a href="#">CV</a>
                                     <a href="#">Applications</a>
                                     <a href="#">Favorites</a>
-                                    <a href="/logout/" >Log out</a>
-                                </div>
+                                </div> #}
                             </li>
-                        </div>
+                        {# </div> #}
 
                         {# <div class="dropdown"> #}
                             <li><a href="/events/{{ username }}"><span>opportunities</span></a>
@@ -34,6 +33,8 @@
                         {# </div> #}
 
                         <li><a href="/jobs/{{ username }}"><span>Jobs</span></a></li>
+
+						<li><a href="/logout/"><span>Log out</span></a></li>
 
                         <li>
                             <a href="#">
@@ -75,7 +76,7 @@
                         <li><a href="#"><span>
                                     <link rel="stylesheet"
                                         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <form class="searchform" action="">
+                                    <form class="searchform" action="/search">
                                         <input type="text" placeholder="Search.." name="Search">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </form>

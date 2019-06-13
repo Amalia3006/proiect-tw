@@ -12,7 +12,7 @@ function start() {
 
 	//debug! delete me!
 	scrapperModules.forEach(el => {
-		el.run();
+		// el.run();
 	});
 }
 

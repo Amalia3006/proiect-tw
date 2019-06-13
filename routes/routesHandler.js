@@ -419,11 +419,59 @@ class routesHandler {
 							send(404, response);
 							return;
 						}
+						let githubLanguages = [];
+						for(let key in userInfo.githubLanguages) {
+							githubLanguages.push({name:key, val: userInfo.githubLanguages[key]});
+						}
+						githubLanguages.sort((a,b) => {
+							return b.val - a.val;
+						})
+						githubLanguages.splice(3);
+						// console.log(githubLanguages);
+						let recomendedJobs = [];
+						for(let job of jobsInfo) {
+							let skipJob = false;
+							const jobTitle = String(job.title).toLowerCase();
+							const jobDesc = String(job.description).toLowerCase();
+							const jobLocation = String(job.country).toLowerCase();
+							for(let interest of userInfo.interests) {
+								if(jobTitle.includes(String(interest).toLowerCase()) || jobDesc.includes(String(interest).toLowerCase())) {
+									recomendedJobs.push(job);
+									skipJob = true;
+									break;
+								}
+							}
+							if(skipJob) continue;
 
-						jobsInfo.splice(6);
+							for(let language of userInfo.languages) {
+								if(jobTitle.includes(String(language).toLowerCase()) || jobDesc.includes(String(language).toLowerCase())) {
+									recomendedJobs.push(job);
+									skipJob = true;
+									break;
+								}
+							}
+							if(skipJob) continue;
+
+							if(jobLocation.includes(String(userInfo.city).toLowerCase()) || jobLocation.includes(String(userInfo.country).toLowerCase())) {
+								recomendedJobs.push(job);
+								skipJob = true;
+							}
+							if(skipJob) continue;
+
+							for(let lang of githubLanguages) {
+								if(jobTitle.includes(String(lang.name).toLowerCase()) || jobDesc.includes(String(lang.name).toLowerCase())) {
+									recomendedJobs.push(job);
+									skipJob = true;
+									break;
+								}
+							}
+							if(skipJob) continue;
+
+						}
+						// console.log(recomendedJobs.length);
 						sendView(200, response, viewName, {
 							username: userDataFromJWT.user.username,
-							jobsInfo: jobsInfo
+							jobsInfo: recomendedJobs
 						});
 					});
 				});
@@ -677,6 +725,29 @@ class routesHandler {
 			});
 		} else if (request.method == "POST") {
 			send(404, response);
+		} else {
+			send(405, response);
+		}
+	}
+
+	static search(request, response) {
+		if(request.method == "GET") {
+			let body = [];
+            request.on("data", chunk => {
+                // console.log("ch: " + chunk);
+                body.push(chunk);
+			});
+			request.on("end", () => {
+				body = body.join();
+				body = parse(body);
+				console.log(body);
+
+				send(404, response);
+			})
+			request.on("error", (err) => {
+				console.log(err);
+				send(500, response);
+			})
 		} else {
 			send(405, response);
 		}
