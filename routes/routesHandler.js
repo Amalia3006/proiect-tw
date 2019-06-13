@@ -820,6 +820,7 @@ class routesHandler {
 	}
 
 	static search(request, response) {
+		console.log("EXEC search");
 		if (request.method == "POST") {
 			const uid = getUidFromPath(request.url);
 			let body = [];
@@ -830,7 +831,7 @@ class routesHandler {
 			request.on("end", () => {
 				body = body.join();
 				body = parse(body);
-				// console.log(body.Search);
+				console.log(body.Search);
 				body.Search = String(body.Search).toLowerCase();
 
 				let jobs = [];
