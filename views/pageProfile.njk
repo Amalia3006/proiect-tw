@@ -76,13 +76,13 @@ Chart.defaults.global.defaultFontColor = '#000';
 var skillChart = new Chart(myChart, {
 type: 'bar',
 data:{
-    labels:['ceva','altceva','blabla'],
+    labels:[{{ data.githubLanguages[0].name }},{{ data.githubLanguages[1].name }},{{ data.githubLanguages[2].name }}],
     datasets:[{
         label:'Language',
         data:[
-            12,
-            13,
-            56
+            {{ data.githubLanguages[0].val }},
+            {{ data.githubLanguages[1].val }},
+           {{ data.githubLanguages[2].val }}
         ],
         backgroundColor:[
             'rgba(255, 99, 132, 0.6)',

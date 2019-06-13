@@ -357,7 +357,10 @@ class routesHandler {
                                 return;
                             }
 
-                            console.log("User " + newUser.username + " saved to database");
+							console.log("User " + newUser.username + " saved to database");
+							const githubUsername = String(body.github_user_url).split()[3];
+							getInfoFromGitHub(githubUsername, body.user_name[2]);
+
 
                             response.writeHead(302, {
                                 Location: "/login"
@@ -421,6 +424,16 @@ class routesHandler {
                         return;
                     }
 
+					let githubLanguages = [];
+					for(let key in userinfo.githubLanguages) {
+						githubLanguages.push({name:key, val: userinfo.githubLanguages[key]});
+					}
+					githubLanguages.sort((a,b) => {
+						return b.val - a.val;
+					})
+					githubLanguages.splice(3);
+					console.log(githubLanguages);
+					userinfo.githubLanguages = githubLanguages;
                     sendView(200, response, viewName, userinfo);
                 });
             });
