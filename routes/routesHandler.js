@@ -73,10 +73,40 @@ class routesHandler {
     static homeDisconnected(request, response) {
         const viewName = "firstPageNoLog";
         if (request.method == "GET") {
-            sendView(200, response, viewName);
+			// sendView(200, response, viewName);
+			mydb.job.find({}, (err, jobsInfo)=>{
+				if(err){
+					console.log(err);
+					send(500, response);
+					return;
+				}
+				if(!jobsInfo){
+					console.log("No job found");
+					send(404, response);
+					return;
+				}
+				jobsInfo.splice(6);
+				mydb.event.find({},(err, eventsInfo)=>{
+					if(err){
+						console.log(err);
+						send(500, response);
+						return;
+					}
+					if(!eventsInfo){
+						console.log("no events found");
+						send(404, response);
+						return;
+					}
+					eventsInfo.splice(6);
+					sendView(200, response, viewName, {
+						eventsInfo: eventsInfo,
+						jobsInfo: jobsInfo
+					})
+				})	
+		})
         } else {
             send(405, response);
-        }
+		}
     }
 
     static homeLoggedin(request, response) {
@@ -116,10 +146,39 @@ class routesHandler {
 
                     console.log(userDataFromJWT);
 
-                    //todo: populate view with info from db
-                    sendView(200, response, viewName, {
-                        username: userDataFromJWT.user.username
-                    });
+					mydb.job.find({}, (err, jobsInfo)=>{
+						if(err){
+							console.log(err);
+							send(500, response);
+							return;
+						}
+						if(!jobsInfo){
+							console.log("No job found");
+							send(404, response);
+							return;
+						}
+						jobsInfo.splice(6);
+						mydb.event.find({},(err, eventsInfo)=>{
+							if(err){
+								console.log(err);
+								send(500, response);
+								return;
+							}
+							if(!eventsInfo){
+								console.log("no events found");
+								send(404, response);
+								return;
+							}
+							eventsInfo.splice(6);
+							sendView(200, response, viewName, {
+								username: userDataFromJWT.user.username,
+								eventsInfo: eventsInfo,
+								jobsInfo: jobsInfo
+							})
+						})	
+				})
+
+					
                 });
             });
         } else {
