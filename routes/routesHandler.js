@@ -841,7 +841,6 @@ getInfoFromGitHub = (username, uid) => {
 	xhr.open("GET", "https://api.github.com/users/" + username + "/repos", true);
 	xhr.setRequestHeader("Accept", "application/vnd.github.nightshade-preview+json");
 	xhr.setRequestHeader("User-Agent", "proiect-tw");
-	xhr.setRequestHeader("Authorization", "token 3d469585a9d0d9990c82baa7b1d95c2721921d1b");
 	xhr.onload = e => {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
@@ -853,7 +852,6 @@ getInfoFromGitHub = (username, uid) => {
 					let xhrLanguages = new XMLHttpRequest();
 					xhrLanguages.open("GET", el["languages_url"], false);
 					xhrLanguages.setRequestHeader("User-Agent", "proiect-tw");
-					xhrLanguages.setRequestHeader("Authorization", "token 3d469585a9d0d9990c82baa7b1d95c2721921d1b");
 					xhrLanguages.send(null);
 
 					if (xhrLanguages.status == 200) {
